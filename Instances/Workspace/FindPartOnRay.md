@@ -1,7 +1,8 @@
-+++
-short = "Find's the first base part on the given ray."
-related = ["Instance/Workspace/FindPartOnRayWithIgnoreList"]
-+++
+---
+short: Find's the first base part on the given ray.
+related: 
+- Instance/Workspace/FindPartOnRayWithIgnoreList
+---
 
 FindPartOnRay uses raycasting to find the first BasePart intersecting with a given Ray. This function returns the position of intersection, the surface normal of the intersecting BasePart at the point of intersection, and the BasePart's BasePart.Material.
 
