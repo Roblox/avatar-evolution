@@ -1,6 +1,6 @@
 ---
-description: Find's the first base part on the given ray.
-related: 
+Description: Find's the first base part on the given ray.
+Related: 
 - Instance/Workspace/FindPartOnRayWithIgnoreList
 ---
 
