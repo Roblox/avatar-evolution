@@ -1,6 +1,6 @@
 +++
 target = "Workspace.FindPartOnRay"
-description = "Find's the first base part on the given ray."
+description = "Finds the first BasePart along the given ray."
 related = ["Workspace.FindPartOnRayWithIgnoreList"]
 +++
 
