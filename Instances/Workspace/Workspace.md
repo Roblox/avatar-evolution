@@ -1,5 +1,5 @@
 +++
-target = "Workspace"
+Target = "Workspace"
 +++
 
 The Workspace is a Service containing the replicated, simulated world.

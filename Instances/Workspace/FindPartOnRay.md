@@ -1,7 +1,7 @@
 +++
-target = "Workspace.FindPartOnRay"
-description = "Finds the first BasePart along the given ray."
-related = ["Workspace.FindPartOnRayWithIgnoreList"]
+Target = "Workspace.FindPartOnRay"
+Description = "Finds the first BasePart along the given ray."
+Related = ["Workspace.FindPartOnRayWithIgnoreList"]
 +++
 
 Find the first `BasePart` intersecting with the given `Ray` at the point closest to the ray's origin.
