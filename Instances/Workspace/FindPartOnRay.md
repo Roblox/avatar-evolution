@@ -2,7 +2,7 @@
 Target = "Workspace.FindPartOnRay"
 Description = "Finds the first BasePart along the given ray."
 Related = ["Workspace.FindPartOnRayWithIgnoreList", "Workspace.FindPartOnRayWithWhitelist"]
-ReturnTypes = ["BasePart", "Vector3", "aVector3", "Enum.Material"]
+ReturnTypes = ["BasePart", "Vector3", "Vector3", "Enum.Material"]
 +++
 
 Find the first [BasePart] intersecting with the given [Ray] at the point closest to the ray's origin.
