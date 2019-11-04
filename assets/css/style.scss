@@ -1,0 +1,17 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+  // background-image: url("/images/banner.jpg");
+  background-image: linear-gradient(120deg, #000, #000);
+}
+
+body {
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-content h1, .main-content h2, h3, h4, h5, h6 {
+  color:#222 !important;
+}
