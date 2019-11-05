@@ -8,7 +8,7 @@ It blends and interpolates between keyframes in multiple playing [AnimationTrack
 
 ## Animatable Joints
 
-Animator searches for animatable joints (including [Motor6Ds][Motor6D] and legacy [Motors][Motor]) in descendants of it's ancestor [Model].
+Animator searches for animatable joints (including [Motor6Ds][Motor6D], legacy [Motors][Motor], and [Bone]s) in descendants of it's ancestor [Model].
 
 Animator matches animatable joints to poses stored in an [Animation] asset based on the names of the parts the joint is connected to. For a [Motor6D], `Part0.Name` is the "parent" name, and `Part1.Name` is the "child" name.
 
@@ -18,7 +18,7 @@ The Animator ignores the [names][Instance.Name] of the joints themselves.
 
 ## Animation Step
 
-Animators are stepped every frame *before* [RunService.Stepped]. This updates the target poses of animatable joints, like [Motor6D.Transform]. The actual updating of the relative positions of the animated parts is defered until the internal `physicsStepped`, *after* [Stepped][RunService.Stepped].
+Animators are stepped every frame *before* [RunService.Stepped]. This updates the target poses of animatable joints, like [Motor6D.Transform] or [Bone.Transform]. The actual updating of the relative positions of the animated parts is defered until the internal `physicsStepped`, *after* [Stepped][RunService.Stepped].
 
 For each joint the Animator will blend the the interpolated poses between keyframes in playing [AnimationTrack]s within the same [Priority][AnimationTrack.Priority] according to their [AnimationTrack.Weight]. AnimationTracks playing with a higher priority override any tracks playing with a lower priority.
 
