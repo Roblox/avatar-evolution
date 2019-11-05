@@ -3,16 +3,18 @@ layout: default
 title: Avatar Evolution
 ---
 
-Avatar Evolution represents a massive cross-team effort, prototyping and building new technology to enable developers to build next-generation games and avatars on Roblox:
+Avatar Evolution represents a massive cross-team effort working on prototyping and building a suite of new technology to enable developers to create next-generation games and avatars on Roblox:
 
 - "Mesh deformation" through skeletal skinning
 - New physics components for more stable and realistic characters
 - Improved mesh and animation importers.
 - And more exciting features, coming soon!
 
-It's still early, but we want your feedback!
+Even though it's still early and these features are in varying stages of pre-release development we're releasing a special beta build of Roblox Studio where you can try them all today.
 
-We're releasing a special beta build of Roblox Studio here.
+Everything here is subject to change before release.
+
+If you try it, let us know what you think. We're putting this build out in an early when we still have the freedom to make dramatic changes as we integrate feedback. Your feedback matters!
 
 # Studio Beta Build
 
@@ -31,13 +33,13 @@ This is a custom build of Roblox Studio. Make sure to copy the folder from this 
 
 If you find issues with new features in this build please [report them on GitHub](https://github.com/Roblox/avatar-evolution/issues).
 
-**Warning:** Don't use this build to edit published places in production! This build includes support for several new APIs that aren't supported in live games. We may add/remove/rename these before release. Data loss may occur!
+**Warning:** Don't use this build to edit published places in production! This build includes support for several new APIs that aren't supported in live games. New types aren't supported in team create either. We may add/remove/rename any of these new classes before release. **Data loss may occur!**
 
 # New Character Controller
 
 We're working on a new componentized character controller suite written in Lua to eventually replace Humanoids as the default controller.
 
-It uses a new framework written in Lua and a set of newly formulated physics components included in this special build.
+It uses a new framework written in Lua and a set of newly formulated physics components, included in this special build.
 
 You can download [a place file including the new controller here]().
 
@@ -64,4 +66,4 @@ And changes to several existing types:
 - [FileMesh](api/class/FileMesh) &mdash; skinned mesh support
 - [Animator](api/class/Animator) &mdash; support for animating Bones
 
-**Warning:** These new types aren't supported on production and may be change dramatically before release. Don't use places or models using these in a production game!
+**Warning:** These new types aren't supported on production and may be change dramatically before release. Don't use places or models using these in a production game! They won't work in Team Create either!
