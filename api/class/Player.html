@@ -1,0 +1,348 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Player</title></head><body><div class="dump-classes"><div class="dump-class" id="Player"><a class="dump-class-title" href="#Player">Player</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="Player.AccountAge"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.AccountAge">AccountAge</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Player.AppearanceDidLoad"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.AppearanceDidLoad">AppearanceDidLoad</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.AutoJumpEnabled"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.AutoJumpEnabled">AutoJumpEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.CameraMaxZoomDistance"><div class="dump-class-property-signature"><a href="#Player.CameraMaxZoomDistance" class="dump-class-member-name">CameraMaxZoomDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.CameraMinZoomDistance" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.CameraMinZoomDistance">CameraMinZoomDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.CameraMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.CameraMode">CameraMode</a>: <a href="#CameraMode">CameraMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>An enum that describes how a Player's camera is allowed to behave. <a href='http://wiki.roblox.com/index.php/CameraMode' target='_blank'>More info</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Player.CanLoadCharacterAppearance"><div class="dump-class-property-signature"><a href="#Player.CanLoadCharacterAppearance" class="dump-class-member-name">CanLoadCharacterAppearance</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.Character" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.Character">Character</a>: <a href="#Model">Model</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Player.CharacterAppearance"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.CharacterAppearance">CharacterAppearance</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.CharacterAppearanceId" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.CharacterAppearanceId" class="dump-class-member-name">CharacterAppearanceId</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.ChatMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.ChatMode" class="dump-class-member-name">ChatMode</a>: <a href="#ChatMode">ChatMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Player.DataComplexity"><div class="dump-class-property-signature"><a href="#Player.DataComplexity" class="dump-class-member-name">DataComplexity</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.DataComplexityLimit" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a href="#Player.DataComplexityLimit" class="dump-class-member-name">DataComplexityLimit</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.DataReady" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a href="#Player.DataReady" class="dump-class-member-name">DataReady</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Read-only. If true, this Player's persistent data can be loaded, false otherwise. <a href='http://wiki.roblox.com/index.php/ROBLOX_Scripting_How_To:_Data_Persistence' target='_blank'>Info on Data Persistence</a>.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Player.DevCameraOcclusionMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.DevCameraOcclusionMode">DevCameraOcclusionMode</a>: <a href="#DevCameraOcclusionMode">DevCameraOcclusionMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.DevComputerCameraMode"><div class="dump-class-property-signature"><a href="#Player.DevComputerCameraMode" class="dump-class-member-name">DevComputerCameraMode</a>: <a href="#DevComputerCameraMovementMode">DevComputerCameraMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.DevComputerMovementMode"><div class="dump-class-property-signature"><a href="#Player.DevComputerMovementMode" class="dump-class-member-name">DevComputerMovementMode</a>: <a href="#DevComputerMovementMode">DevComputerMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.DevEnableMouseLock"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.DevEnableMouseLock">DevEnableMouseLock</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.DevTouchCameraMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.DevTouchCameraMode">DevTouchCameraMode</a>: <a href="#DevTouchCameraMovementMode">DevTouchCameraMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.DevTouchMovementMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.DevTouchMovementMode">DevTouchMovementMode</a>: <a href="#DevTouchMovementMode">DevTouchMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.DisplayName"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.DisplayName">DisplayName</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.FollowUserId"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.FollowUserId">FollowUserId</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.GameplayPaused" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.GameplayPaused">GameplayPaused</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.Guest"><div class="dump-class-property-signature"><a href="#Player.Guest" class="dump-class-member-name">Guest</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.HealthDisplayDistance" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.HealthDisplayDistance" class="dump-class-member-name">HealthDisplayDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.LocaleId"><div class="dump-class-property-signature"><a href="#Player.LocaleId" class="dump-class-member-name">LocaleId</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.MaximumSimulationRadius" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.MaximumSimulationRadius" class="dump-class-member-name">MaximumSimulationRadius</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.MembershipType" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.MembershipType" class="dump-class-member-name">MembershipType</a>: <a href="#MembershipType">MembershipType</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.NameDisplayDistance" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.NameDisplayDistance">NameDisplayDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.Neutral"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.Neutral">Neutral</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.OsPlatform"><div class="dump-class-property-signature"><a href="#Player.OsPlatform" class="dump-class-member-name">OsPlatform</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.ReplicationFocus" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.ReplicationFocus">ReplicationFocus</a>: <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.RespawnLocation" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.RespawnLocation">RespawnLocation</a>: <a href="#SpawnLocation">SpawnLocation</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.SimulationRadius" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.SimulationRadius">SimulationRadius</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.Team"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.Team">Team</a>: <a href="#Team">Team</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.TeamColor"><div class="dump-class-property-signature"><a href="#Player.TeamColor" class="dump-class-member-name">TeamColor</a>: <a href="#BrickColor">BrickColor</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.Teleported" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.Teleported">Teleported</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.TeleportedIn" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.TeleportedIn" class="dump-class-member-name">TeleportedIn</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.UserId" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Player.UserId" class="dump-class-member-name">UserId</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Player.VRDevice"><div class="dump-class-property-signature"><a href="#Player.VRDevice" class="dump-class-member-name">VRDevice</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Player.userId"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Player.userId">userId</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>userId</code> is deprecated. Use <code>UserId</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="Player.AddToBlockList"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.AddToBlockList">AddToBlockList</a>(<div class="dump-function-argument">userIds: <a href="#Array">Array</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.ClearCharacterAppearance"><div class="dump-function-signature"><a href="#Player.ClearCharacterAppearance" class="dump-class-member-name">ClearCharacterAppearance</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.DistanceFromCharacter"><div class="dump-function-signature"><a href="#Player.DistanceFromCharacter" class="dump-class-member-name">DistanceFromCharacter</a>(<div class="dump-function-argument">point: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.GetFriendStatus"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.GetFriendStatus">GetFriendStatus</a>(<div class="dump-function-argument">player: <a href="#Instance">Instance</a></div>) =&gt; <a href="#FriendStatus">FriendStatus</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.GetGameSessionID"><div class="dump-function-signature"><a href="#Player.GetGameSessionID" class="dump-class-member-name">GetGameSessionID</a>() =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.GetJoinData" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.GetJoinData">GetJoinData</a>() =&gt; <a href="#Dictionary">Dictionary</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.GetMouse"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.GetMouse">GetMouse</a>() =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.GetUnder13"><div class="dump-function-signature"><a href="#Player.GetUnder13" class="dump-class-member-name">GetUnder13</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.HasAppearanceLoaded"><div class="dump-function-signature"><a href="#Player.HasAppearanceLoaded" class="dump-class-member-name">HasAppearanceLoaded</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.IsUserAvailableForExperiment" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a href="#Player.IsUserAvailableForExperiment" class="dump-class-member-name">IsUserAvailableForExperiment</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.Kick"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.Kick">Kick</a>(<div class="dump-function-argument">message: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.LoadBoolean" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.LoadBoolean">LoadBoolean</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.LoadCharacterAppearance" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.LoadCharacterAppearance">LoadCharacterAppearance</a>(<div class="dump-function-argument">assetInstance: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.LoadData" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.LoadData">LoadData</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.LoadInstance"><div class="dump-function-signature"><a href="#Player.LoadInstance" class="dump-class-member-name">LoadInstance</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.LoadNumber"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.LoadNumber">LoadNumber</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.LoadString"><div class="dump-function-signature"><a href="#Player.LoadString" class="dump-class-member-name">LoadString</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.Move"><div class="dump-function-signature"><a href="#Player.Move" class="dump-class-member-name">Move</a>(<div class="dump-function-argument">walkDirection: <a href="#Vector3">Vector3</a>,</div><div class="dump-function-argument">relativeToCamera: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.RemoveCharacter"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.RemoveCharacter">RemoveCharacter</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.RequestFriendship"><div class="dump-function-signature"><a href="#Player.RequestFriendship" class="dump-class-member-name">RequestFriendship</a>(<div class="dump-function-argument">player: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.RevokeFriendship"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.RevokeFriendship">RevokeFriendship</a>(<div class="dump-function-argument">player: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.SaveBoolean" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.SaveBoolean">SaveBoolean</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.SaveData"><div class="dump-function-signature"><a href="#Player.SaveData" class="dump-class-member-name">SaveData</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.SaveInstance" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.SaveInstance">SaveInstance</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.SaveNumber"><div class="dump-function-signature"><a href="#Player.SaveNumber" class="dump-class-member-name">SaveNumber</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#double">double</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.SaveString"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.SaveString">SaveString</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.SetAccountAge"><div class="dump-function-signature"><a href="#Player.SetAccountAge" class="dump-class-member-name">SetAccountAge</a>(<div class="dump-function-argument">accountAge: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.SetMembershipType" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Player.SetMembershipType" class="dump-class-member-name">SetMembershipType</a>(<div class="dump-function-argument">membershipType: <a href="#MembershipType">MembershipType</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.SetSuperSafeChat"><div class="dump-function-signature"><a href="#Player.SetSuperSafeChat" class="dump-class-member-name">SetSuperSafeChat</a>(<div class="dump-function-argument">value: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.SetUnder13" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.SetUnder13">SetUnder13</a>(<div class="dump-function-argument">value: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.UpdatePlayerBlocked" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.UpdatePlayerBlocked">UpdatePlayerBlocked</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">blocked: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.loadBoolean"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.loadBoolean">loadBoolean</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>loadBoolean</code> is deprecated. Use <code>LoadBoolean</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div><div id="Player.loadInstance" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.loadInstance">loadInstance</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>loadInstance</code> is deprecated. Use <code>LoadInstance</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.loadNumber"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.loadNumber">loadNumber</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>loadNumber</code> is deprecated. Use <code>LoadNumber</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.loadString"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.loadString">loadString</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>loadString</code> is deprecated. Use <code>LoadString</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div id="Player.saveBoolean" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a href="#Player.saveBoolean" class="dump-class-member-name">saveBoolean</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>saveBoolean</code> is deprecated. Use <code>SaveBoolean</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.saveInstance"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.saveInstance">saveInstance</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>saveInstance</code> is deprecated. Use <code>SaveInstance</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.saveNumber"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.saveNumber">saveNumber</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#double">double</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>saveNumber</code> is deprecated. Use <code>SaveNumber</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div id="Player.saveString" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a href="#Player.saveString" class="dump-class-member-name">saveString</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>saveString</code> is deprecated. Use <code>SaveString</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div id="Player.GetFriendsOnline" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Player.GetFriendsOnline" class="dump-class-member-name">GetFriendsOnline</a>(<div class="dump-function-argument">maxFriends: <a href="#int">int</a></div>) =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.GetRankInGroup" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.GetRankInGroup">GetRankInGroup</a>(<div class="dump-function-argument">groupId: <a href="#int64">int64</a></div>) =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.GetRoleInGroup" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.GetRoleInGroup">GetRoleInGroup</a>(<div class="dump-function-argument">groupId: <a href="#int64">int64</a></div>) =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.IsBestFriendsWith" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.IsBestFriendsWith">IsBestFriendsWith</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.IsFriendsWith"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.IsFriendsWith">IsFriendsWith</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.IsInGroup"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.IsInGroup">IsInGroup</a>(<div class="dump-function-argument">groupId: <a href="#int64">int64</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.LoadCharacter"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.LoadCharacter">LoadCharacter</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Loads in a new character for this player.  This will replace the player's current character, if they have one. This should be used in conjunction with Players.CharacterAutoLoads to control spawning of characters. This function only works from a server-side script (NOT a LocalScript).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Player.LoadCharacterBlocking"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.LoadCharacterBlocking">LoadCharacterBlocking</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Player.LoadCharacterWithHumanoidDescription"><div class="dump-function-signature"><a href="#Player.LoadCharacterWithHumanoidDescription" class="dump-class-member-name">LoadCharacterWithHumanoidDescription</a>(<div class="dump-function-argument">humanoidDescription: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.WaitForDataReady"><div class="dump-function-signature"><a href="#Player.WaitForDataReady" class="dump-class-member-name">WaitForDataReady</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Yields until the persistent data for this Player is ready to be loaded. <a href='http://wiki.roblox.com/index.php/ROBLOX_Scripting_How_To:_Data_Persistence' target='_blank'>Info on Data Persistence</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Player.isFriendsWith"><div class="dump-function-signature"><a href="#Player.isFriendsWith" class="dump-class-member-name">isFriendsWith</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>isFriendsWith</code> is deprecated. Use <code>IsFriendsWith</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div id="Player.waitForDataReady" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.waitForDataReady">waitForDataReady</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>waitForDataReady</code> is deprecated. Use <code>WaitForDataReady</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="Player.CharacterAdded"><div class="dump-function-signature"><a href="#Player.CharacterAdded" class="dump-class-member-name">CharacterAdded</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">character: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Player.CharacterAppearanceLoaded"><div class="dump-function-signature"><a href="#Player.CharacterAppearanceLoaded" class="dump-class-member-name">CharacterAppearanceLoaded</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">character: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Player.CharacterRemoving"><div class="dump-function-signature"><a href="#Player.CharacterRemoving" class="dump-class-member-name">CharacterRemoving</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">character: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Player.Chatted"><div class="dump-function-signature"><a href="#Player.Chatted" class="dump-class-member-name">Chatted</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">message: <a href="#string">string</a>,</div><div class="dump-function-argument">recipient: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Player.FriendStatusChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Player.FriendStatusChanged">FriendStatusChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">player: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">friendStatus: <a href="#FriendStatus">FriendStatus</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Player.Idled"><div class="dump-function-signature"><a href="#Player.Idled" class="dump-class-member-name">Idled</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">time: <a href="#double">double</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired periodically after the user has been AFK for a while.  Currently this event is only fired for the <em>local</em> Player.  &quot;time&quot; is the time in seconds that the user has been idle.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Player.OnTeleport" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#Player.OnTeleport" class="dump-class-member-name">OnTeleport</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">teleportState: <a href="#TeleportState">TeleportState</a>,</div><div class="dump-function-argument">placeId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">spawnName: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Player.SimulationRadiusChanged" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#Player.SimulationRadiusChanged" class="dump-class-member-name">SimulationRadiusChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">radius: <a href="#float">float</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

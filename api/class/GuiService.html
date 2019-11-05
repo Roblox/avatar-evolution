@@ -1,0 +1,318 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>GuiService</title></head><body><div class="dump-classes"><div id="GuiService" class="dump-class"><a href="#GuiService" class="dump-class-title">GuiService</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotCreatable, NotReplicated, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>The GuiService is a special service, which currently allows developers to control what GuiObject is currently being selected by the Gamepad Gui navigator, and allows clients to check if Roblox's main menu is currently open. This service has a lot of hidden members, which are mainly used internally by Roblox's CoreScripts.</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="GuiService.AutoSelectGuiEnabled"><div class="dump-class-property-signature"><a href="#GuiService.AutoSelectGuiEnabled" class="dump-class-member-name">AutoSelectGuiEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.CoreEffectFolder" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiService.CoreEffectFolder">CoreEffectFolder</a>: <a href="#Folder">Folder</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiService.CoreGuiFolder"><div class="dump-class-property-signature"><a href="#GuiService.CoreGuiFolder" class="dump-class-member-name">CoreGuiFolder</a>: <a href="#Folder">Folder</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.CoreGuiNavigationEnabled" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#GuiService.CoreGuiNavigationEnabled" class="dump-class-member-name">CoreGuiNavigationEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GuiNavigationEnabled" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiService.GuiNavigationEnabled">GuiNavigationEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="GuiService.IsModalDialog"><div class="dump-class-property-signature"><a href="#GuiService.IsModalDialog" class="dump-class-member-name">IsModalDialog</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.IsWindows" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiService.IsWindows">IsWindows</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiService.MenuIsOpen"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiService.MenuIsOpen">MenuIsOpen</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiService.SelectedCoreObject"><div class="dump-class-property-signature"><a href="#GuiService.SelectedCoreObject" class="dump-class-member-name">SelectedCoreObject</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.SelectedObject" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiService.SelectedObject">SelectedObject</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="GuiService.AddCenterDialog"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.AddCenterDialog">AddCenterDialog</a>(<div class="dump-function-argument">dialog: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">centerDialogType: <a href="#CenterDialogType">CenterDialogType</a>,</div><div class="dump-function-argument">showFunction: <a href="#Function">Function</a>,</div><div class="dump-function-argument">hideFunction: <a href="#Function">Function</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.AddKey"><div class="dump-function-signature"><a href="#GuiService.AddKey" class="dump-class-member-name">AddKey</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.AddSelectionParent" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.AddSelectionParent" class="dump-class-member-name">AddSelectionParent</a>(<div class="dump-function-argument">selectionName: <a href="#string">string</a>,</div><div class="dump-function-argument">selectionParent: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.AddSelectionTuple"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.AddSelectionTuple">AddSelectionTuple</a>(<div class="dump-function-argument">selectionName: <a href="#string">string</a>,</div><div class="dump-function-argument">selections: <a href="#Tuple">Tuple</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.AddSpecialKey" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.AddSpecialKey" class="dump-class-member-name">AddSpecialKey</a>(<div class="dump-function-argument">key: <a href="#SpecialKey">SpecialKey</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.BroadcastNotification" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.BroadcastNotification">BroadcastNotification</a>(<div class="dump-function-argument">data: <a href="#string">string</a>,</div><div class="dump-function-argument">notificationType: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.ClearError"><div class="dump-function-signature"><a href="#GuiService.ClearError" class="dump-class-member-name">ClearError</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.CloseInspectMenu"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.CloseInspectMenu">CloseInspectMenu</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.CloseStatsBasedOnInputString" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.CloseStatsBasedOnInputString" class="dump-class-member-name">CloseStatsBasedOnInputString</a>(<div class="dump-function-argument">input: <a href="#string">string</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetBrickCount"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.GetBrickCount">GetBrickCount</a>() =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetClosestDialogToPosition" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.GetClosestDialogToPosition" class="dump-class-member-name">GetClosestDialogToPosition</a>(<div class="dump-function-argument">position: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetEmotesMenuOpen" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.GetEmotesMenuOpen">GetEmotesMenuOpen</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetErrorCode"><div class="dump-function-signature"><a href="#GuiService.GetErrorCode" class="dump-class-member-name">GetErrorCode</a>() =&gt; <a href="#ConnectionError">ConnectionError</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetErrorMessage" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.GetErrorMessage">GetErrorMessage</a>() =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetErrorType"><div class="dump-function-signature"><a href="#GuiService.GetErrorType" class="dump-class-member-name">GetErrorType</a>() =&gt; <a href="#ConnectionError">ConnectionError</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetGameplayPausedNotificationEnabled"><div class="dump-function-signature"><a href="#GuiService.GetGameplayPausedNotificationEnabled" class="dump-class-member-name">GetGameplayPausedNotificationEnabled</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetGuiInset" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.GetGuiInset">GetGuiInset</a>() =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns a Tuple containing two Vector2 values representing the offset of user GUIs in pixels from the top right corner of the screen and the bottom right corner of the screen respectively.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetInspectMenuEnabled"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.GetInspectMenuEnabled">GetInspectMenuEnabled</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetNotificationTypeList"><div class="dump-function-signature"><a href="#GuiService.GetNotificationTypeList" class="dump-class-member-name">GetNotificationTypeList</a>() =&gt; <a href="#Dictionary">Dictionary</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetResolutionScale" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.GetResolutionScale" class="dump-class-member-name">GetResolutionScale</a>() =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetSafeZoneOffsets" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.GetSafeZoneOffsets">GetSafeZoneOffsets</a>() =&gt; <a href="#Dictionary">Dictionary</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.GetUiMessage"><div class="dump-function-signature"><a href="#GuiService.GetUiMessage" class="dump-class-member-name">GetUiMessage</a>() =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.InspectPlayerFromHumanoidDescription" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.InspectPlayerFromHumanoidDescription">InspectPlayerFromHumanoidDescription</a>(<div class="dump-function-argument">humanoidDescription: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">name: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.InspectPlayerFromUserId"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.InspectPlayerFromUserId">InspectPlayerFromUserId</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.InspectPlayerFromUserIdWithCtx" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.InspectPlayerFromUserIdWithCtx" class="dump-class-member-name">InspectPlayerFromUserIdWithCtx</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">ctx: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.IsMemoryTrackerEnabled" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.IsMemoryTrackerEnabled" class="dump-class-member-name">IsMemoryTrackerEnabled</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.IsTenFootInterface" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.IsTenFootInterface">IsTenFootInterface</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="GuiService.OpenBrowserWindow"><div class="dump-function-signature"><a href="#GuiService.OpenBrowserWindow" class="dump-class-member-name">OpenBrowserWindow</a>(<div class="dump-function-argument">url: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="GuiService.OpenNativeOverlay"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.OpenNativeOverlay">OpenNativeOverlay</a>(<div class="dump-function-argument">title: <a href="#string">string</a>,</div><div class="dump-function-argument">url: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.RemoveCenterDialog"><div class="dump-function-signature"><a href="#GuiService.RemoveCenterDialog" class="dump-class-member-name">RemoveCenterDialog</a>(<div class="dump-function-argument">dialog: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.RemoveKey" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.RemoveKey">RemoveKey</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.RemoveSelectionGroup" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.RemoveSelectionGroup">RemoveSelectionGroup</a>(<div class="dump-function-argument">selectionName: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.RemoveSpecialKey"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.RemoveSpecialKey">RemoveSpecialKey</a>(<div class="dump-function-argument">key: <a href="#SpecialKey">SpecialKey</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.SetEmotesMenuOpen"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.SetEmotesMenuOpen">SetEmotesMenuOpen</a>(<div class="dump-function-argument">isOpen: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.SetGameplayPausedNotificationEnabled" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.SetGameplayPausedNotificationEnabled">SetGameplayPausedNotificationEnabled</a>(<div class="dump-function-argument">enabled: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.SetGlobalGuiInset"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.SetGlobalGuiInset">SetGlobalGuiInset</a>(<div class="dump-function-argument">x1: <a href="#int">int</a>,</div><div class="dump-function-argument">y1: <a href="#int">int</a>,</div><div class="dump-function-argument">x2: <a href="#int">int</a>,</div><div class="dump-function-argument">y2: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.SetInspectMenuEnabled"><div class="dump-function-signature"><a href="#GuiService.SetInspectMenuEnabled" class="dump-class-member-name">SetInspectMenuEnabled</a>(<div class="dump-function-argument">enabled: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.SetMenuIsOpen"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.SetMenuIsOpen">SetMenuIsOpen</a>(<div class="dump-function-argument">open: <a href="#bool">bool</a>,</div><div class="dump-function-argument">menuName: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.SetSafeZoneOffsets"><div class="dump-function-signature"><a href="#GuiService.SetSafeZoneOffsets" class="dump-class-member-name">SetSafeZoneOffsets</a>(<div class="dump-function-argument">top: <a href="#float">float</a>,</div><div class="dump-function-argument">bottom: <a href="#float">float</a>,</div><div class="dump-function-argument">left: <a href="#float">float</a>,</div><div class="dump-function-argument">right: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.SetUiMessage"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.SetUiMessage">SetUiMessage</a>(<div class="dump-function-argument">msgType: <a href="#UiMessageType">UiMessageType</a>,</div><div class="dump-function-argument">uiMessage: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.ShowStatsBasedOnInputString"><div class="dump-function-signature"><a href="#GuiService.ShowStatsBasedOnInputString" class="dump-class-member-name">ShowStatsBasedOnInputString</a>(<div class="dump-function-argument">input: <a href="#string">string</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="GuiService.ToggleFullscreen"><div class="dump-function-signature"><a href="#GuiService.ToggleFullscreen" class="dump-class-member-name">ToggleFullscreen</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.GetScreenResolution" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiService.GetScreenResolution" class="dump-class-member-name">GetScreenResolution</a>() =&gt; <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div id="GuiService.BrowserWindowClosed" class="dump-class-member dump-class-event dump-member-deprecated"><div class="dump-function-signature"><a href="#GuiService.BrowserWindowClosed" class="dump-class-member-name">BrowserWindowClosed</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.CloseInspectMenuRequest"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.CloseInspectMenuRequest">CloseInspectMenuRequest</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.EmotesMenuOpenChanged" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.EmotesMenuOpenChanged">EmotesMenuOpenChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">isOpen: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event dump-member-deprecated" id="GuiService.ErrorMessageChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.ErrorMessageChanged">ErrorMessageChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">newErrorMessage: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.InspectMenuEnabledChangedSignal"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.InspectMenuEnabledChangedSignal">InspectMenuEnabledChangedSignal</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">enabled: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiService.InspectPlayerFromHumanoidDescriptionRequest" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#GuiService.InspectPlayerFromHumanoidDescriptionRequest" class="dump-class-member-name">InspectPlayerFromHumanoidDescriptionRequest</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">humanoidDescription: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">name: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.InspectPlayerFromUserIdRequest"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.InspectPlayerFromUserIdRequest">InspectPlayerFromUserIdRequest</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.InspectPlayerFromUserIdWithCtxRequest"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.InspectPlayerFromUserIdWithCtxRequest">InspectPlayerFromUserIdWithCtxRequest</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">ctx: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.KeyPressed"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.KeyPressed">KeyPressed</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">key: <a href="#string">string</a>,</div><div class="dump-function-argument">modifiers: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.MenuClosed"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.MenuClosed">MenuClosed</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.MenuOpened"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.MenuOpened">MenuOpened</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.NetworkPausedEnabledChanged"><div class="dump-function-signature"><a href="#GuiService.NetworkPausedEnabledChanged" class="dump-class-member-name">NetworkPausedEnabledChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">enabled: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.SafeZoneOffsetsChanged"><div class="dump-function-signature"><a href="#GuiService.SafeZoneOffsetsChanged" class="dump-class-member-name">SafeZoneOffsetsChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.ShowLeaveConfirmation"><div class="dump-function-signature"><a href="#GuiService.ShowLeaveConfirmation" class="dump-class-member-name">ShowLeaveConfirmation</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.SpecialKeyPressed"><div class="dump-function-signature"><a href="#GuiService.SpecialKeyPressed" class="dump-class-member-name">SpecialKeyPressed</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">key: <a href="#SpecialKey">SpecialKey</a>,</div><div class="dump-function-argument">modifiers: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiService.UiMessageChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.UiMessageChanged">UiMessageChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">msgType: <a href="#UiMessageType">UiMessageType</a>,</div><div class="dump-function-argument">newUiMessage: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Callbacks</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-callback" id="GuiService.SendCoreUiNotification"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiService.SendCoreUiNotification">SendCoreUiNotification</a>: function(<div class="dump-function-argument">title: <a href="#string">string</a>,</div><div class="dump-function-argument">text: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

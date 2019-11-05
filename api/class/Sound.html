@@ -1,0 +1,281 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Sound</title></head><body><div class="dump-classes"><div class="dump-class" id="Sound"><a class="dump-class-title" href="#Sound">Sound</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="Sound.EmitterSize"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.EmitterSize">EmitterSize</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.IsLoaded" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Sound.IsLoaded" class="dump-class-member-name">IsLoaded</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.IsPaused" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.IsPaused">IsPaused</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.IsPlaying"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.IsPlaying">IsPlaying</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.Looped"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.Looped">Looped</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.MaxDistance"><div class="dump-class-property-signature"><a href="#Sound.MaxDistance" class="dump-class-member-name">MaxDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Sound.MinDistance"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.MinDistance">MinDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Sound.Pitch"><div class="dump-class-property-signature"><a href="#Sound.Pitch" class="dump-class-member-name">Pitch</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.PlayOnRemove"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.PlayOnRemove">PlayOnRemove</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The sound will play when it is removed from the Workspace. Looped sounds don't play</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Sound.PlaybackLoudness" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.PlaybackLoudness">PlaybackLoudness</a>: <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.PlaybackSpeed" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.PlaybackSpeed">PlaybackSpeed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.Playing" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Sound.Playing" class="dump-class-member-name">Playing</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.RollOffMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.RollOffMode">RollOffMode</a>: <a href="#RollOffMode">RollOffMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.SoundGroup"><div class="dump-class-property-signature"><a href="#Sound.SoundGroup" class="dump-class-member-name">SoundGroup</a>: <a href="#SoundGroup">SoundGroup</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Sound.SoundId"><div class="dump-class-property-signature"><a href="#Sound.SoundId" class="dump-class-member-name">SoundId</a>: <a href="#Content">Content</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.TimeLength" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Sound.TimeLength">TimeLength</a>: <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.TimePosition" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Sound.TimePosition" class="dump-class-member-name">TimePosition</a>: <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.Volume" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Sound.Volume" class="dump-class-member-name">Volume</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.isPlaying" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a href="#Sound.isPlaying" class="dump-class-member-name">isPlaying</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>isPlaying</code> is deprecated. Use <code>IsPlaying</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div id="Sound.Pause" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.Pause">Pause</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Sound.Play"><div class="dump-function-signature"><a href="#Sound.Play" class="dump-class-member-name">Play</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.Resume" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.Resume">Resume</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Sound.Stop"><div class="dump-function-signature"><a href="#Sound.Stop" class="dump-class-member-name">Stop</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.pause" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a href="#Sound.pause" class="dump-class-member-name">pause</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>pause</code> is deprecated. Use <code>Pause</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Sound.play"><div class="dump-function-signature"><a href="#Sound.play" class="dump-class-member-name">play</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>play</code> is deprecated. Use <code>Play</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Sound.stop"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.stop">stop</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>stop</code> is deprecated. Use <code>Stop</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="Sound.DidLoop"><div class="dump-function-signature"><a href="#Sound.DidLoop" class="dump-class-member-name">DidLoop</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a>,</div><div class="dump-function-argument">numOfTimesLooped: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Sound.Ended"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.Ended">Ended</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.Loaded" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.Loaded">Loaded</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Sound.Paused" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#Sound.Paused" class="dump-class-member-name">Paused</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Sound.Played"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.Played">Played</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Sound.Resumed"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Sound.Resumed">Resumed</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Sound.Stopped"><div class="dump-function-signature"><a href="#Sound.Stopped" class="dump-class-member-name">Stopped</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">soundId: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

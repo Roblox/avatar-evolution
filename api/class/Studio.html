@@ -1,0 +1,324 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Studio</title></head><body><div class="dump-classes"><div id="Studio" class="dump-class"><a class="dump-class-title" href="#Studio">Studio</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotReplicated, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="Studio.Always Save Script Changes" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Always Save Script Changes" class="dump-class-member-name">Always Save Script Changes</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Animate Hover Over" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Animate Hover Over">Animate Hover Over</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Auto Closing Brackets" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Auto Closing Brackets">Auto Closing Brackets</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Auto Closing Quotes" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Auto Closing Quotes" class="dump-class-member-name">Auto Closing Quotes</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Auto Indent" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Auto Indent" class="dump-class-member-name">Auto Indent</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Auto-Recovery Enabled"><div class="dump-class-property-signature"><a href="#Studio.Auto-Recovery Enabled" class="dump-class-member-name">Auto-Recovery Enabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Auto-Recovery Interval (Minutes)" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Auto-Recovery Interval (Minutes)">Auto-Recovery Interval (Minutes)</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Auto-Recovery Path"><div class="dump-class-property-signature"><a href="#Studio.Auto-Recovery Path" class="dump-class-member-name">Auto-Recovery Path</a>: <a href="#QDir">QDir</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Background Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Background Color" class="dump-class-member-name">Background Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Basic Objects Display Mode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Basic Objects Display Mode">Basic Objects Display Mode</a>: <a href="#ListDisplayMode">ListDisplayMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Built-in Function Color"><div class="dump-class-property-signature"><a href="#Studio.Built-in Function Color" class="dump-class-member-name">Built-in Function Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Camera Mouse Wheel Speed"><div class="dump-class-property-signature"><a href="#Studio.Camera Mouse Wheel Speed" class="dump-class-member-name">Camera Mouse Wheel Speed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Camera Shift Speed"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Camera Shift Speed">Camera Shift Speed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Camera Speed"><div class="dump-class-property-signature"><a href="#Studio.Camera Speed" class="dump-class-member-name">Camera Speed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Camera Zoom to Mouse Position" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Camera Zoom to Mouse Position">Camera Zoom to Mouse Position</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Clear Output On Start" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Clear Output On Start" class="dump-class-member-name">Clear Output On Start</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Comment Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Comment Color">Comment Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.DefaultScriptFileDir"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.DefaultScriptFileDir">DefaultScriptFileDir</a>: <a href="#QDir">QDir</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.DeprecatedObjectsShown"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.DeprecatedObjectsShown">DeprecatedObjectsShown</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Device Pairing Code"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Device Pairing Code">Device Pairing Code</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Disable Accurate Play Solo" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Disable Accurate Play Solo">Disable Accurate Play Solo</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Drag Multiple Parts As Single Part" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Drag Multiple Parts As Single Part" class="dump-class-member-name">Drag Multiple Parts As Single Part</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Enable Autocomplete"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Enable Autocomplete">Enable Autocomplete</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Enable CoreScript Debugger" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Enable CoreScript Debugger" class="dump-class-member-name">Enable CoreScript Debugger</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Studio.Enable Intellisense"><div class="dump-class-property-signature"><a href="#Studio.Enable Intellisense" class="dump-class-member-name">Enable Intellisense</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Error Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Error Color" class="dump-class-member-name">Error Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Find Selection Background Color"><div class="dump-class-property-signature"><a href="#Studio.Find Selection Background Color" class="dump-class-member-name">Find Selection Background Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Font"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Font">Font</a>: <a href="#QFont">QFont</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Hover Animate Speed" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Hover Animate Speed">Hover Animate Speed</a>: <a href="#HoverAnimateSpeed">HoverAnimateSpeed</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Hover Over Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Hover Over Color" class="dump-class-member-name">Hover Over Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Keyword Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Keyword Color">Keyword Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Language"><div class="dump-class-property-signature"><a href="#Studio.Language" class="dump-class-member-name">Language</a>: <a href="#LanguagePreference">LanguagePreference</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Line Thickness" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Line Thickness" class="dump-class-member-name">Line Thickness</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.LuaDebuggerEnabled"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.LuaDebuggerEnabled">LuaDebuggerEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.LuaDebuggerEnabledAtStartup"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.LuaDebuggerEnabledAtStartup">LuaDebuggerEnabledAtStartup</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Matching Word Background Color"><div class="dump-class-property-signature"><a href="#Studio.Matching Word Background Color" class="dump-class-member-name">Matching Word Background Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Maximum Output Lines" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Maximum Output Lines">Maximum Output Lines</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Number Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Number Color" class="dump-class-member-name">Number Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Only Play Audio from Window in Focus"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Only Play Audio from Window in Focus">Only Play Audio from Window in Focus</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Operator Color"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Operator Color">Operator Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Output Font" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Output Font">Output Font</a>: <a href="#QFont">QFont</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Output Layout Mode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Output Layout Mode">Output Layout Mode</a>: <a href="#OutputLayoutMode">OutputLayoutMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.OverrideCoreScripts" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.OverrideCoreScripts">OverrideCoreScripts</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.OverrideCoreScriptsDir"><div class="dump-class-property-signature"><a href="#Studio.OverrideCoreScriptsDir" class="dump-class-member-name">OverrideCoreScriptsDir</a>: <a href="#QDir">QDir</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.PermissionLevelShown"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.PermissionLevelShown">PermissionLevelShown</a>: <a href="#PermissionLevelShown">PermissionLevelShown</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.PluginsDir" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.PluginsDir">PluginsDir</a>: <a href="#QDir">QDir</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Preprocessor Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Preprocessor Color">Preprocessor Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.RecentSavesDir"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.RecentSavesDir">RecentSavesDir</a>: <a href="#QDir">QDir</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Render Throttle Percentage"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Render Throttle Percentage">Render Throttle Percentage</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Respect Studio shortcuts when game has focus" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Respect Studio shortcuts when game has focus">Respect Studio shortcuts when game has focus</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.RuntimeUndoBehavior"><div class="dump-class-property-signature"><a href="#Studio.RuntimeUndoBehavior" class="dump-class-member-name">RuntimeUndoBehavior</a>: <a href="#RuntimeUndoBehavior">RuntimeUndoBehavior</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.ScriptTimeoutLength"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.ScriptTimeoutLength">ScriptTimeoutLength</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Select Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Select Color">Select Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Select/Hover Color"><div class="dump-class-property-signature"><a href="#Studio.Select/Hover Color" class="dump-class-member-name">Select/Hover Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Selection Background Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Selection Background Color" class="dump-class-member-name">Selection Background Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Selection Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Selection Color" class="dump-class-member-name">Selection Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Server Audio Behavior"><div class="dump-class-property-signature"><a href="#Studio.Server Audio Behavior" class="dump-class-member-name">Server Audio Behavior</a>: <a href="#ServerAudioBehavior">ServerAudioBehavior</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show Core GUI in Explorer while Playing"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Show Core GUI in Explorer while Playing">Show Core GUI in Explorer while Playing</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show Diagnostics Bar"><div class="dump-class-property-signature"><a href="#Studio.Show Diagnostics Bar" class="dump-class-member-name">Show Diagnostics Bar</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show Hidden Objects in Explorer"><div class="dump-class-property-signature"><a href="#Studio.Show Hidden Objects in Explorer" class="dump-class-member-name">Show Hidden Objects in Explorer</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show Hover Over"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Show Hover Over">Show Hover Over</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Show Navigation Mesh" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Show Navigation Mesh">Show Navigation Mesh</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Show Plugin GUI Service in Explorer" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.Show Plugin GUI Service in Explorer" class="dump-class-member-name">Show Plugin GUI Service in Explorer</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show QT warnings in output"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Show QT warnings in output">Show QT warnings in output</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show Roblox Plugin GUI Service in Explorer"><div class="dump-class-property-signature"><a href="#Studio.Show Roblox Plugin GUI Service in Explorer" class="dump-class-member-name">Show Roblox Plugin GUI Service in Explorer</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Show plus button on hover in Explorer"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Show plus button on hover in Explorer">Show plus button on hover in Explorer</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Skip Closing Brackets and Quotes" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Skip Closing Brackets and Quotes">Skip Closing Brackets and Quotes</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.String Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.String Color" class="dump-class-member-name">String Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Tab Width"><div class="dump-class-property-signature"><a href="#Studio.Tab Width" class="dump-class-member-name">Tab Width</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Text Color"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Text Color">Text Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Text Wrapping" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Text Wrapping">Text Wrapping</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Studio.Theme"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Theme">Theme</a>: <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.UI Theme" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Studio.UI Theme" class="dump-class-member-name">UI Theme</a>: <a href="#UITheme">UITheme</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Studio.Warning Color" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Studio.Warning Color">Warning Color</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div id="Studio.GetAvailableThemes" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Studio.GetAvailableThemes" class="dump-class-member-name">GetAvailableThemes</a>() =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div id="Studio.ThemeChanged" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Studio.ThemeChanged">ThemeChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>CylindricalConstraint</title></head><body><div class="dump-classes"><div class="dump-class" id="CylindricalConstraint"><a href="#CylindricalConstraint" class="dump-class-title">CylindricalConstraint</a><p class="dump-class-inherits">Inherits: <a href="#SlidingBallConstraint">SlidingBallConstraint</a></p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="CylindricalConstraint.AngularActuatorType"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.AngularActuatorType" class="dump-class-member-name">AngularActuatorType</a>: <a href="#ActuatorType">ActuatorType</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Type of angular actuator: None, Motor, or Servo.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.AngularLimitsEnabled"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.AngularLimitsEnabled" class="dump-class-member-name">AngularLimitsEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Enables the angular limits around the rotation axis.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="CylindricalConstraint.AngularRestitution" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.AngularRestitution" class="dump-class-member-name">AngularRestitution</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Restitution of the two limits, or how elastic they are. Value in <a href="0,%201" title="0, 1">0, 1</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="CylindricalConstraint.AngularSpeed" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.AngularSpeed">AngularSpeed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Target angular speed. This value is unsigned as the servo will always move toward its target. In radians per second. Value in [0, inf).</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.AngularVelocity"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.AngularVelocity">AngularVelocity</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The target angular velocity of the motor in radians per second around the rotation axis. Value in [0, inf).</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.CurrentAngle"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.CurrentAngle">CurrentAngle</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Signed angle (in degrees) between the reference axis and the secondary axis of Attachment1 around the rotation axis. Value in <a href="-180,%20180" title="-180, 180">-180, 180</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="CylindricalConstraint.InclinationAngle" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.InclinationAngle" class="dump-class-member-name">InclinationAngle</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Direction of the rotation axis as an angle from the x-axis in the xy-plane of Attachment0. Value in <a href="-180,%20180" title="-180, 180">-180, 180</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.LowerAngle"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.LowerAngle">LowerAngle</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Lower limit for the angle (in degrees) between the reference axis and the SecondaryAxis of Attachment1 around the rotation axis. Value in <a href="-180,%20180" title="-180, 180">-180, 180</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="CylindricalConstraint.MotorMaxAngularAcceleration" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.MotorMaxAngularAcceleration" class="dump-class-member-name">MotorMaxAngularAcceleration</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The maximum angular acceleration of the motor in radians per second squared. Value in [0, inf).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="CylindricalConstraint.MotorMaxTorque" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.MotorMaxTorque" class="dump-class-member-name">MotorMaxTorque</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The maximum torque the motor can apply to achieve the target angular velocity. The units are mass * studs^2 / second^2. Value in [0, inf).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.RotationAxisVisible"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.RotationAxisVisible" class="dump-class-member-name">RotationAxisVisible</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Enable the visibility of the rotation axis.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.ServoMaxTorque"><div class="dump-class-property-signature"><a href="#CylindricalConstraint.ServoMaxTorque" class="dump-class-member-name">ServoMaxTorque</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Maximum torque the servo motor can apply. The units are mass * studs^2 / second^2. Value in [0, inf).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.TargetAngle"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.TargetAngle">TargetAngle</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Target angle (in degrees) between the reference axis and the secondary axis of Attachment1 around the rotation axis. Value in <a href="-180,%20180" title="-180, 180">-180, 180</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="CylindricalConstraint.UpperAngle" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.UpperAngle">UpperAngle</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Upper limit for the angle (in degrees) between the reference axis and the SecondaryAxis of Attachment1 around the rotation axis. Value in <a href="-180,%20180" title="-180, 180">-180, 180</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="CylindricalConstraint.WorldRotationAxis"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#CylindricalConstraint.WorldRotationAxis">WorldRotationAxis</a>: <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The unit vector direction of the rotation axis in world coordinates.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div></div></div></div></div></body></html>

@@ -1,0 +1,294 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>HumanoidDescription</title></head><body><div class="dump-classes"><div id="HumanoidDescription" class="dump-class"><a class="dump-class-title" href="#HumanoidDescription">HumanoidDescription</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>An object that specifies the appearance of Humanoid characters</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="HumanoidDescription.BackAccessory"><div class="dump-class-property-signature"><a href="#HumanoidDescription.BackAccessory" class="dump-class-member-name">BackAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.BodyTypeScale" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.BodyTypeScale">BodyTypeScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.ClimbAnimation" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.ClimbAnimation">ClimbAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.DepthScale"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.DepthScale">DepthScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.Face"><div class="dump-class-property-signature"><a href="#HumanoidDescription.Face" class="dump-class-member-name">Face</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.FaceAccessory" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.FaceAccessory">FaceAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.FallAnimation"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.FallAnimation">FallAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.FrontAccessory"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.FrontAccessory">FrontAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.GraphicTShirt" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.GraphicTShirt">GraphicTShirt</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.HairAccessory" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.HairAccessory">HairAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.HatAccessory" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#HumanoidDescription.HatAccessory" class="dump-class-member-name">HatAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.Head"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.Head">Head</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.HeadColor" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.HeadColor">HeadColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.HeadScale"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.HeadScale">HeadScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.HeightScale" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.HeightScale">HeightScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.IdleAnimation" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#HumanoidDescription.IdleAnimation" class="dump-class-member-name">IdleAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.JumpAnimation"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.JumpAnimation">JumpAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.LeftArm" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.LeftArm">LeftArm</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.LeftArmColor"><div class="dump-class-property-signature"><a href="#HumanoidDescription.LeftArmColor" class="dump-class-member-name">LeftArmColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.LeftLeg"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.LeftLeg">LeftLeg</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.LeftLegColor"><div class="dump-class-property-signature"><a href="#HumanoidDescription.LeftLegColor" class="dump-class-member-name">LeftLegColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.NeckAccessory"><div class="dump-class-property-signature"><a href="#HumanoidDescription.NeckAccessory" class="dump-class-member-name">NeckAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.NumberEmotesLoaded" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#HumanoidDescription.NumberEmotesLoaded" class="dump-class-member-name">NumberEmotesLoaded</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.Pants"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.Pants">Pants</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.ProportionScale"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.ProportionScale">ProportionScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.RightArm"><div class="dump-class-property-signature"><a href="#HumanoidDescription.RightArm" class="dump-class-member-name">RightArm</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.RightArmColor"><div class="dump-class-property-signature"><a href="#HumanoidDescription.RightArmColor" class="dump-class-member-name">RightArmColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.RightLeg" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.RightLeg">RightLeg</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.RightLegColor"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.RightLegColor">RightLegColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.RunAnimation"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.RunAnimation">RunAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.Shirt"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.Shirt">Shirt</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.ShouldersAccessory" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.ShouldersAccessory">ShouldersAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.SwimAnimation"><div class="dump-class-property-signature"><a href="#HumanoidDescription.SwimAnimation" class="dump-class-member-name">SwimAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.Torso"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.Torso">Torso</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.TorsoColor"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.TorsoColor">TorsoColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.WaistAccessory"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.WaistAccessory">WaistAccessory</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.WalkAnimation" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.WalkAnimation">WalkAnimation</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="HumanoidDescription.WidthScale"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#HumanoidDescription.WidthScale">WidthScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="HumanoidDescription.AddEmote"><div class="dump-function-signature"><a href="#HumanoidDescription.AddEmote" class="dump-class-member-name">AddEmote</a>(<div class="dump-function-argument">name: <a href="#string">string</a>,</div><div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.GetEmotes" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#HumanoidDescription.GetEmotes" class="dump-class-member-name">GetEmotes</a>() =&gt; <a href="#Dictionary">Dictionary</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="HumanoidDescription.GetEquippedEmotes"><div class="dump-function-signature"><a class="dump-class-member-name" href="#HumanoidDescription.GetEquippedEmotes">GetEquippedEmotes</a>() =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.RemoveEmote" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#HumanoidDescription.RemoveEmote">RemoveEmote</a>(<div class="dump-function-argument">name: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.SetEmotes" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#HumanoidDescription.SetEmotes" class="dump-class-member-name">SetEmotes</a>(<div class="dump-function-argument">emotes: <a href="#Dictionary">Dictionary</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="HumanoidDescription.SetEquippedEmotes"><div class="dump-function-signature"><a class="dump-class-member-name" href="#HumanoidDescription.SetEquippedEmotes">SetEquippedEmotes</a>(<div class="dump-function-argument">equippedEmotes: <a href="#Array">Array</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="HumanoidDescription.EmotesChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#HumanoidDescription.EmotesChanged">EmotesChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">newEmotes: <a href="#Dictionary">Dictionary</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="HumanoidDescription.EquippedEmotesChanged" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#HumanoidDescription.EquippedEmotesChanged" class="dump-class-member-name">EquippedEmotesChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">newEquippedEmotes: <a href="#Array">Array</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

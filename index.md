@@ -54,9 +54,9 @@ Read more about [the changes and how to correctly import skinned meshes here]().
 This beta build includes several new classes.
 
 - [Bone](api/class/Bone)
-- [CharacterSensor](api/class/CharacterSensor)
+- [CharacterHelper](api/class/CharacterHelper)
 - [LevitationConstraint](api/class/LevitationConstraint)
-- [LinerVelocity](api/class/LinerVelocity)
+- [LinearVelocity](api/class/LinearVelocity)
 
 And changes to several existing types:
 

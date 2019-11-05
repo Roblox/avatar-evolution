@@ -1,0 +1,294 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>GuiObject</title></head><body><div class="dump-classes"><div id="GuiObject" class="dump-class"><a href="#GuiObject" class="dump-class-title">GuiObject</a><p class="dump-class-inherits">Inherits: <a href="#GuiBase2d">GuiBase2d</a></p><p class="dump-class-tags">Tags: NotBrowsable, NotCreatable</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="GuiObject.Active" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.Active">Active</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>If true, this GuiObject can fire mouse events and will pass them to any GuiObjects layered underneath, while false will do neither.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.AnchorPoint"><div class="dump-class-property-signature"><a href="#GuiObject.AnchorPoint" class="dump-class-member-name">AnchorPoint</a>: <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="GuiObject.BackgroundColor"><div class="dump-class-property-signature"><a href="#GuiObject.BackgroundColor" class="dump-class-member-name">BackgroundColor</a>: <a href="#BrickColor">BrickColor</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Deprecated. Use BackgroundColor3 instead</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.BackgroundColor3" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.BackgroundColor3">BackgroundColor3</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A Color3 value that specifies the background color for the GuiObject. This value is ignored if the Style property (not found on all GuiObjects) is set to something besides custom.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.BackgroundTransparency" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.BackgroundTransparency">BackgroundTransparency</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A number value that specifies how transparent the background of the GuiObject is. This value is ignored if the Style property (not found on all GuiObjects) is set to something besides custom.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="GuiObject.BorderColor"><div class="dump-class-property-signature"><a href="#GuiObject.BorderColor" class="dump-class-member-name">BorderColor</a>: <a href="#BrickColor">BrickColor</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Deprecated. Use BorderColor3 instead</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.BorderColor3"><div class="dump-class-property-signature"><a href="#GuiObject.BorderColor3" class="dump-class-member-name">BorderColor3</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A Color3 value that specifies the color of the outline of the GuiObject. This value is ignored if the Style property (not found on all GuiObjects) is set to something besides custom.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.BorderMode"><div class="dump-class-property-signature"><a href="#GuiObject.BorderMode" class="dump-class-member-name">BorderMode</a>: <a href="#BorderMode">BorderMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.BorderSizePixel"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.BorderSizePixel">BorderSizePixel</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A number value that specifies the thickness (in pixels) of the outline of the GuiObject. Currently this value can only be set to either 0 or 1, any other number has no effect. This value is ignored if the Style property (not found on all GuiObjects) is set to something besides custom.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.ClipsDescendants"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.ClipsDescendants">ClipsDescendants</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>If set to true, any descendants of this GuiObject will only render if contained within it's borders. If set to false, all descendants will render regardless of position.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="GuiObject.Draggable"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.Draggable">Draggable</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>If true, allows a GuiObject to be dragged by the user's mouse. The events 'DragBegin' and 'DragStopped' are fired when the appropriate action happens, and only will fire on Draggable=true GuiObjects.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.LayoutOrder"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.LayoutOrder">LayoutOrder</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.NextSelectionDown"><div class="dump-class-property-signature"><a href="#GuiObject.NextSelectionDown" class="dump-class-member-name">NextSelectionDown</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.NextSelectionLeft" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.NextSelectionLeft">NextSelectionLeft</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.NextSelectionRight"><div class="dump-class-property-signature"><a href="#GuiObject.NextSelectionRight" class="dump-class-member-name">NextSelectionRight</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.NextSelectionUp" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#GuiObject.NextSelectionUp" class="dump-class-member-name">NextSelectionUp</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.Position"><div class="dump-class-property-signature"><a href="#GuiObject.Position" class="dump-class-member-name">Position</a>: <a href="#UDim2">UDim2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A UDim2 value describing the position of the top-left corner of the GuiObject on screen. More information on UDim2 is available <a href='http://wiki.roblox.com/index.php/UDim2' target='_blank'>here</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.Rotation" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.Rotation">Rotation</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.Selectable"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.Selectable">Selectable</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.SelectionImageObject"><div class="dump-class-property-signature"><a href="#GuiObject.SelectionImageObject" class="dump-class-member-name">SelectionImageObject</a>: <a href="#GuiObject">GuiObject</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Overrides the default selection adornment (used for gamepads). For best results, this should point to a GuiObject.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.Size"><div class="dump-class-property-signature"><a href="#GuiObject.Size" class="dump-class-member-name">Size</a>: <a href="#UDim2">UDim2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A UDim2 value describing the size of the GuiObject on screen in both absolute and relative coordinates. More information on UDim2 is available <a href='http://wiki.roblox.com/index.php/UDim2' target='_blank'>here</a>.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="GuiObject.SizeConstraint" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.SizeConstraint">SizeConstraint</a>: <a href="#SizeConstraint">SizeConstraint</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The direction(s) that an object can be resized in. <a href='http://wiki.roblox.com/index.php/SizeConstraint' target='_blank'>More info</a>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiObject.Transparency"><div class="dump-class-property-signature"><a href="#GuiObject.Transparency" class="dump-class-member-name">Transparency</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.Visible" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#GuiObject.Visible" class="dump-class-member-name">Visible</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.ZIndex" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#GuiObject.ZIndex">ZIndex</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Describes the ordering in which overlapping GuiObjects will be drawn. A value of 1 is drawn first, while higher values are drawn in ascending order (each value draws over the last).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div id="GuiObject.TweenPosition" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.TweenPosition">TweenPosition</a>(<div class="dump-function-argument">endPosition: <a href="#UDim2">UDim2</a>,</div><div class="dump-function-argument">easingDirection: <a href="#EasingDirection">EasingDirection</a>,</div><div class="dump-function-argument">easingStyle: <a href="#EasingStyle">EasingStyle</a>,</div><div class="dump-function-argument">time: <a href="#float">float</a>,</div><div class="dump-function-argument">override: <a href="#bool">bool</a>,</div><div class="dump-function-argument">callback: <a href="#Function">Function</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Smoothly moves a GuiObject from its current position to 'endPosition'. The only required argument is 'endPosition'. <a href='http://wiki.roblox.com/index.php/TweenPosition' target='_blank'>More info</a></p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="GuiObject.TweenSize"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.TweenSize">TweenSize</a>(<div class="dump-function-argument">endSize: <a href="#UDim2">UDim2</a>,</div><div class="dump-function-argument">easingDirection: <a href="#EasingDirection">EasingDirection</a>,</div><div class="dump-function-argument">easingStyle: <a href="#EasingStyle">EasingStyle</a>,</div><div class="dump-function-argument">time: <a href="#float">float</a>,</div><div class="dump-function-argument">override: <a href="#bool">bool</a>,</div><div class="dump-function-argument">callback: <a href="#Function">Function</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Smoothly translates a GuiObject's current size to 'endSize'. The only required argument is 'endSize'. <a href='http://wiki.roblox.com/index.php/TweenSize' target='_blank'>More info</a></p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="GuiObject.TweenSizeAndPosition" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#GuiObject.TweenSizeAndPosition" class="dump-class-member-name">TweenSizeAndPosition</a>(<div class="dump-function-argument">endSize: <a href="#UDim2">UDim2</a>,</div><div class="dump-function-argument">endPosition: <a href="#UDim2">UDim2</a>,</div><div class="dump-function-argument">easingDirection: <a href="#EasingDirection">EasingDirection</a>,</div><div class="dump-function-argument">easingStyle: <a href="#EasingStyle">EasingStyle</a>,</div><div class="dump-function-argument">time: <a href="#float">float</a>,</div><div class="dump-function-argument">override: <a href="#bool">bool</a>,</div><div class="dump-function-argument">callback: <a href="#Function">Function</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Smoothly translates a GuiObject's current size to 'endSize', and also smoothly translates the GuiObject's current position to 'endPosition'. The only required arguments are 'endSize' and 'endPosition'. <a href='http://wiki.roblox.com/index.php/TweenSizeAndPosition' target='_blank'>More info</a></p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div id="GuiObject.DragBegin" class="dump-class-member dump-class-event dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.DragBegin">DragBegin</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">initialPosition: <a href="#UDim2">UDim2</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a GuiObject with Draggable set to true starts to be dragged. 'InitialPosition' is a UDim2 value of the position of the GuiObject before any drag operation began.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event dump-member-deprecated" id="GuiObject.DragStopped"><div class="dump-function-signature"><a href="#GuiObject.DragStopped" class="dump-class-member-name">DragStopped</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Always fired after a DragBegin event, DragStopped is fired when the user releases the mouse button causing a drag operation on the GuiObject. Arguments 'x', and 'y' specify the top-left absolute position of the GuiObject when the event is fired.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.InputBegan" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#GuiObject.InputBegan" class="dump-class-member-name">InputBegan</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">input: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user begins interacting via a Human-Computer Interface device (Mouse button down, touch begin, keyboard button down, etc.). 'inputObject' is an InputObject, which contains useful data for querying user input.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.InputChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.InputChanged">InputChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">input: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user changes interacting via a Human-Computer Interface device (Mouse move, touch move, mouse wheel, etc.). 'inputObject' is an InputObject, which contains useful data for querying user input.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.InputEnded" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.InputEnded">InputEnded</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">input: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user stops interacting via a Human-Computer Interface device (Mouse button up, touch end, keyboard button up, etc.). 'inputObject' is an InputObject, which contains useful data for querying user input.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.MouseEnter" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#GuiObject.MouseEnter" class="dump-class-member-name">MouseEnter</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse enters a GuiObject, as long as the GuiObject is active (see active property for more detail). Arguments 'x', and 'y' specify the absolute pixel position of the mouse.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.MouseLeave" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.MouseLeave">MouseLeave</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse leaves a GuiObject, as long as the GuiObject is active (see active property for more detail). Arguments 'x', and 'y' specify the absolute pixel position of the mouse.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.MouseMoved"><div class="dump-function-signature"><a href="#GuiObject.MouseMoved" class="dump-class-member-name">MouseMoved</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse is inside a GuiObject and moves, as long as the GuiObject is active (see active property for more detail). Arguments 'x', and 'y' specify the absolute pixel position of the mouse.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.MouseWheelBackward"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.MouseWheelBackward">MouseWheelBackward</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.MouseWheelForward" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.MouseWheelForward">MouseWheelForward</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.SelectionGained" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#GuiObject.SelectionGained" class="dump-class-member-name">SelectionGained</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="GuiObject.SelectionLost" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.SelectionLost">SelectionLost</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.TouchLongPress"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.TouchLongPress">TouchLongPress</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">touchPositions: <a href="#Array">Array</a>,</div><div class="dump-function-argument">state: <a href="#UserInputState">UserInputState</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user holds at least one finger for a short amount of time on the same screen position on a TouchEnabled device. 'touchPositions' is a Lua array of Vector2, each indicating the position of all the fingers involved in the gesture. 'state' indicates the Enum.UserInputState of the gesture.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.TouchPan"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.TouchPan">TouchPan</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">touchPositions: <a href="#Array">Array</a>,</div><div class="dump-function-argument">totalTranslation: <a href="#Vector2">Vector2</a>,</div><div class="dump-function-argument">velocity: <a href="#Vector2">Vector2</a>,</div><div class="dump-function-argument">state: <a href="#UserInputState">UserInputState</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user drags at least one finger on a TouchEnabled device. 'touchPositions' is a Lua array of Vector2, each indicating the position of all the fingers involved in the gesture. 'totalTranslation' is a Vector2, indicating how far the pan gesture has gone from its starting point. 'velocity' is a Vector2 that indicates how quickly the gesture is being performed in each dimension. 'state' indicates the Enum.UserInputState of the gesture.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.TouchPinch"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.TouchPinch">TouchPinch</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">touchPositions: <a href="#Array">Array</a>,</div><div class="dump-function-argument">scale: <a href="#float">float</a>,</div><div class="dump-function-argument">velocity: <a href="#float">float</a>,</div><div class="dump-function-argument">state: <a href="#UserInputState">UserInputState</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user pinches their fingers on a TouchEnabled device. 'touchPositions' is a Lua array of Vector2, each indicating the position of all the fingers involved in the pinch gesture. 'scale' is a float that indicates the difference from the beginning of the pinch gesture. 'velocity' is a float indicating how quickly the pinch gesture is happening. 'state' indicates the Enum.UserInputState of the gesture.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.TouchRotate"><div class="dump-function-signature"><a href="#GuiObject.TouchRotate" class="dump-class-member-name">TouchRotate</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">touchPositions: <a href="#Array">Array</a>,</div><div class="dump-function-argument">rotation: <a href="#float">float</a>,</div><div class="dump-function-argument">velocity: <a href="#float">float</a>,</div><div class="dump-function-argument">state: <a href="#UserInputState">UserInputState</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user rotates two fingers on a TouchEnabled device. 'touchPositions' is a Lua array of Vector2, each indicating the position of all the fingers involved in the gesture. 'rotation' is a float indicating how much the rotation has gone from the start of the gesture. 'velocity' is a float that indicates how quickly the gesture is being performed. 'state' indicates the Enum.UserInputState of the gesture.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiObject.TouchSwipe" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#GuiObject.TouchSwipe" class="dump-class-member-name">TouchSwipe</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">swipeDirection: <a href="#SwipeDirection">SwipeDirection</a>,</div><div class="dump-function-argument">numberOfTouches: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user swipes their fingers on a TouchEnabled device. 'swipeDirection' is an Enum.SwipeDirection, indicating the direction the user swiped. 'numberOfTouches' is an int that indicates how many touches were involved with the gesture.  This event only fires locally.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiObject.TouchTap"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiObject.TouchTap">TouchTap</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">touchPositions: <a href="#Array">Array</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user taps their finger on a TouchEnabled device. 'touchPositions' is a Lua array of Vector2, each indicating the position of all the fingers involved in the tap gesture. This event only fires locally.  This event will always fire regardless of game state.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div></div></div></div></div></body></html>

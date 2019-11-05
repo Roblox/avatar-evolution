@@ -1,0 +1,302 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Workspace</title></head><body><div class="dump-classes"><div id="Workspace" class="dump-class"><a href="#Workspace" class="dump-class-title">Workspace</a><p class="dump-class-inherits">Inherits: <a href="#Model">Model</a></p><p class="dump-class-tags">Tags: NotCreatable, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>The Workspace is a Service containing the replicated, simulated world.</p>
+<p>Objects descending from workspace will be rendered and physically interact.</p>
+<p>Workspace is the root of the physical world. Parts, joints, and Constraints will not function unless they are in Workspace.</p>
+</div><div class="dump-class-description-meta"><span title="Content source: Dumpling Supplemental" class="dump-info"/></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="Workspace.AllowThirdPartySales" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.AllowThirdPartySales">AllowThirdPartySales</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.CurrentCamera"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.CurrentCamera">CurrentCamera</a>: <a href="#Camera">Camera</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.DistributedGameTime"><div class="dump-class-property-signature"><a href="#Workspace.DistributedGameTime" class="dump-class-member-name">DistributedGameTime</a>: <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.FallenPartsDestroyHeight" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.FallenPartsDestroyHeight">FallenPartsDestroyHeight</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Sets the height at which falling characters and parts are destroyed. This property is not scriptable and can only be set in Studio</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.FilteringEnabled"><div class="dump-class-property-signature"><a href="#Workspace.FilteringEnabled" class="dump-class-member-name">FilteringEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.Gravity" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Workspace.Gravity" class="dump-class-member-name">Gravity</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.StreamingEnabled" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.StreamingEnabled">StreamingEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.StreamingMinRadius" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Workspace.StreamingMinRadius" class="dump-class-member-name">StreamingMinRadius</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.StreamingPauseMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.StreamingPauseMode">StreamingPauseMode</a>: <a href="#StreamingPauseMode">StreamingPauseMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.StreamingTargetRadius"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.StreamingTargetRadius">StreamingTargetRadius</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.TemporaryLegacyPhysicsSolverOverride"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Workspace.TemporaryLegacyPhysicsSolverOverride">TemporaryLegacyPhysicsSolverOverride</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Workspace.Terrain"><div class="dump-class-property-signature"><a href="#Workspace.Terrain" class="dump-class-member-name">Terrain</a>: <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="Workspace.BreakJoints"><div class="dump-function-signature"><a href="#Workspace.BreakJoints" class="dump-class-member-name">BreakJoints</a>(<div class="dump-function-argument">objects: <a href="#Objects">Objects</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.CalculateJumpPower"><div class="dump-function-signature"><a href="#Workspace.CalculateJumpPower" class="dump-class-member-name">CalculateJumpPower</a>(<div class="dump-function-argument">gravity: <a href="#float">float</a>,</div><div class="dump-function-argument">jumpHeight: <a href="#float">float</a></div>) =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.ExperimentalSolverIsEnabled"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.ExperimentalSolverIsEnabled">ExperimentalSolverIsEnabled</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.FindPartOnRay"><div class="dump-function-signature"><a href="#Workspace.FindPartOnRay" class="dump-class-member-name">FindPartOnRay</a>(<div class="dump-function-argument">ray: <a href="#Ray">Ray</a>,</div><div class="dump-function-argument">ignoreDescendantsInstance: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">terrainCellsAreCubes: <a href="#bool">bool</a>,</div><div class="dump-function-argument">ignoreWater: <a href="#bool">bool</a></div>) =&gt; <span>(<span class="dump-function-return-type"><a href="#BasePart">BasePart</a>, </span><span class="dump-function-return-type"><a href="#Vector3">Vector3</a>, </span><span class="dump-function-return-type"><a href="#Vector3">Vector3</a>, </span><span class="dump-function-return-type"><a href="#Material">Material</a></span>)</span></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Find the first <a href="BasePart" title="BasePart">BasePart</a> intersecting with the given <a href="Ray" title="Ray">Ray</a>.</p>
+<h2>Notes</h2>
+<ul>
+<li>The ray will not hit backfaces of parts. If the ray originates from inside of a part it won't hit that part, with the exception of non-convex parts like <a href="Terrain" title="Terrain">Terrain</a> and <a href="MeshPart" title="MeshPart">MeshParts</a> with <a href="TriangleMeshPart#CollisionFidelity" title="TriangleMeshPart.CollisionFidelity">CollisionFidelity.Default</a>.</li>
+<li>The length of <a href="Ray#Direction" title="Ray.Direction">Ray.Direction</a> determines the length of the cast ray, and is clamped to a maximum of 5000 studs.</li>
+<li>The ray uses the <code>Default</code> collision group, and won't intersect with parts with <a href="BasePart#CollisionGroupId" title="BasePart.CollisionGroupId">their collision group</a> set to a group that does not collide with <code>Default</code>.</li>
+<li>The ray will still intersect with parts that are <a href="BasePart#CanCollide" title="BasePart.CanCollide">CanCollide</a> false.</li>
+</ul>
+<p>If the ray doesn't hit anything the return values will be:</p>
+<pre><code class="language-lua">nil, ray.Origin + ray.Direction, Vector3.new(), Enum.Material.Air
+</code></pre>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Supplemental"/></div></div><div class="dump-function-returns"><div class="dump-class-member-subtitle">Parameters</div><table><thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>ray</td><td><a href="#Ray">Ray</a></td><td></td><td><p>The ray.</p>
+</td></tr><tr><td>ignoreDescendantsInstance</td><td><a href="#Instance">Instance</a></td><td>nil</td><td><p>Any descendant parts of this object will be ignored.</p>
+</td></tr><tr><td>terrainCellsAreCubes</td><td><a href="#bool">bool</a></td><td>false</td><td><p>Unused. Deprecated with the transition to smooth terrain.</p>
+</td></tr><tr><td>ignoreWater</td><td><a href="#bool">bool</a></td><td>false</td><td><p>If the ray should ignore terrain water.</p>
+</td></tr></tbody></table></div><div class="dump-function-returns"><div class="dump-class-member-subtitle">Returns</div><table><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><a href="#BasePart">BasePart</a></td><td><p>The part that was hit.</p>
+</td></tr><tr><td><a href="#Vector3">Vector3</a></td><td><p>The world space position of the intersection.</p>
+</td></tr><tr><td><a href="#Vector3">Vector3</a></td><td><p>The world space normal of the part at the point of intersection.</p>
+</td></tr><tr><td><a href="#Material">Material</a></td><td><p>The part's <a href="BasePart#Material" title="BasePart.Material">Material</a>, or the voxel material at the point of intersection for <a href="Terrain" title="Terrain">Terrain</a>.</p>
+</td></tr></tbody></table></div></div><div id="Workspace.FindPartOnRayWithIgnoreList" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.FindPartOnRayWithIgnoreList">FindPartOnRayWithIgnoreList</a>(<div class="dump-function-argument">ray: <a href="#Ray">Ray</a>,</div><div class="dump-function-argument">ignoreDescendantsTable: <a href="#Objects">Objects</a>,</div><div class="dump-function-argument">terrainCellsAreCubes: <a href="#bool">bool</a>,</div><div class="dump-function-argument">ignoreWater: <a href="#bool">bool</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Return type is (BasePart, Vector3) if the ray hits.  If it misses it will return (nil, PointAtEndOfRay)</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.FindPartOnRayWithWhitelist"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.FindPartOnRayWithWhitelist">FindPartOnRayWithWhitelist</a>(<div class="dump-function-argument">ray: <a href="#Ray">Ray</a>,</div><div class="dump-function-argument">whitelistDescendantsTable: <a href="#Objects">Objects</a>,</div><div class="dump-function-argument">ignoreWater: <a href="#bool">bool</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.FindPartsInRegion3" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.FindPartsInRegion3">FindPartsInRegion3</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">ignoreDescendantsInstance: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">maxParts: <a href="#int">int</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns parts in the area defined by the Region3, up to specified maxCount or 100, whichever is less</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.FindPartsInRegion3WithIgnoreList"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.FindPartsInRegion3WithIgnoreList">FindPartsInRegion3WithIgnoreList</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">ignoreDescendantsTable: <a href="#Objects">Objects</a>,</div><div class="dump-function-argument">maxParts: <a href="#int">int</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns parts in the area defined by the Region3, up to specified maxCount or 100, whichever is less</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Workspace.FindPartsInRegion3WithWhiteList" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Workspace.FindPartsInRegion3WithWhiteList" class="dump-class-member-name">FindPartsInRegion3WithWhiteList</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">whitelistDescendantsTable: <a href="#Objects">Objects</a>,</div><div class="dump-function-argument">maxParts: <a href="#int">int</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.GetNumAwakeParts" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.GetNumAwakeParts">GetNumAwakeParts</a>() =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.GetPhysicsThrottling"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.GetPhysicsThrottling">GetPhysicsThrottling</a>() =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.GetRealPhysicsFPS"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.GetRealPhysicsFPS">GetRealPhysicsFPS</a>() =&gt; <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.IsRegion3Empty" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.IsRegion3Empty">IsRegion3Empty</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">ignoreDescendentsInstance: <a href="#Instance">Instance</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.IsRegion3EmptyWithIgnoreList"><div class="dump-function-signature"><a href="#Workspace.IsRegion3EmptyWithIgnoreList" class="dump-class-member-name">IsRegion3EmptyWithIgnoreList</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">ignoreDescendentsTable: <a href="#Objects">Objects</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Workspace.JoinToOutsiders"><div class="dump-function-signature"><a href="#Workspace.JoinToOutsiders" class="dump-class-member-name">JoinToOutsiders</a>(<div class="dump-function-argument">objects: <a href="#Objects">Objects</a>,</div><div class="dump-function-argument">jointType: <a href="#JointCreationMode">JointCreationMode</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.MakeJoints" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.MakeJoints">MakeJoints</a>(<div class="dump-function-argument">objects: <a href="#Objects">Objects</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.PGSIsEnabled" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Workspace.PGSIsEnabled" class="dump-class-member-name">PGSIsEnabled</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.SetPhysicsThrottleEnabled" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.SetPhysicsThrottleEnabled">SetPhysicsThrottleEnabled</a>(<div class="dump-function-argument">value: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.UnjoinFromOutsiders" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.UnjoinFromOutsiders">UnjoinFromOutsiders</a>(<div class="dump-function-argument">objects: <a href="#Objects">Objects</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Workspace.ZoomToExtents" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.ZoomToExtents">ZoomToExtents</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Workspace.findPartOnRay"><div class="dump-function-signature"><a href="#Workspace.findPartOnRay" class="dump-class-member-name">findPartOnRay</a>(<div class="dump-function-argument">ray: <a href="#Ray">Ray</a>,</div><div class="dump-function-argument">ignoreDescendantsInstance: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">terrainCellsAreCubes: <a href="#bool">bool</a>,</div><div class="dump-function-argument">ignoreWater: <a href="#bool">bool</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>findPartOnRay</code> is deprecated. Use <code>FindPartOnRay</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div id="Workspace.findPartsInRegion3" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Workspace.findPartsInRegion3">findPartsInRegion3</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">ignoreDescendantsInstance: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">maxParts: <a href="#int">int</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>findPartsInRegion3</code> is deprecated. Use <code>FindPartsInRegion3</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div></div></div></body></html>

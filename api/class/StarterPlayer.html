@@ -1,0 +1,286 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>StarterPlayer</title></head><body><div class="dump-classes"><div class="dump-class" id="StarterPlayer"><a class="dump-class-title" href="#StarterPlayer">StarterPlayer</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotCreatable, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="StarterPlayer.AllowCustomAnimations" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.AllowCustomAnimations" class="dump-class-member-name">AllowCustomAnimations</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.AutoJumpEnabled" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.AutoJumpEnabled" class="dump-class-member-name">AutoJumpEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.CameraMaxZoomDistance" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.CameraMaxZoomDistance">CameraMaxZoomDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.CameraMinZoomDistance"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.CameraMinZoomDistance">CameraMinZoomDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.CameraMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.CameraMode">CameraMode</a>: <a href="#CameraMode">CameraMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.CharacterJumpHeight"><div class="dump-class-property-signature"><a href="#StarterPlayer.CharacterJumpHeight" class="dump-class-member-name">CharacterJumpHeight</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.CharacterJumpPower"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.CharacterJumpPower">CharacterJumpPower</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.CharacterMaxSlopeAngle" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.CharacterMaxSlopeAngle">CharacterMaxSlopeAngle</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.CharacterUseJumpPower" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.CharacterUseJumpPower" class="dump-class-member-name">CharacterUseJumpPower</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.CharacterWalkSpeed"><div class="dump-class-property-signature"><a href="#StarterPlayer.CharacterWalkSpeed" class="dump-class-member-name">CharacterWalkSpeed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.DevCameraOcclusionMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.DevCameraOcclusionMode">DevCameraOcclusionMode</a>: <a href="#DevCameraOcclusionMode">DevCameraOcclusionMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.DevComputerCameraMovementMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.DevComputerCameraMovementMode">DevComputerCameraMovementMode</a>: <a href="#DevComputerCameraMovementMode">DevComputerCameraMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.DevComputerMovementMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.DevComputerMovementMode">DevComputerMovementMode</a>: <a href="#DevComputerMovementMode">DevComputerMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.DevTouchCameraMovementMode"><div class="dump-class-property-signature"><a href="#StarterPlayer.DevTouchCameraMovementMode" class="dump-class-member-name">DevTouchCameraMovementMode</a>: <a href="#DevTouchCameraMovementMode">DevTouchCameraMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.DevTouchMovementMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.DevTouchMovementMode" class="dump-class-member-name">DevTouchMovementMode</a>: <a href="#DevTouchMovementMode">DevTouchMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.EnableMouseLockOption"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.EnableMouseLockOption">EnableMouseLockOption</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAssetIDFace"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDFace" class="dump-class-member-name">GameSettingsAssetIDFace</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsAssetIDHead" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDHead" class="dump-class-member-name">GameSettingsAssetIDHead</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsAssetIDLeftArm" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.GameSettingsAssetIDLeftArm">GameSettingsAssetIDLeftArm</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsAssetIDLeftLeg" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.GameSettingsAssetIDLeftLeg">GameSettingsAssetIDLeftLeg</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAssetIDPants"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDPants" class="dump-class-member-name">GameSettingsAssetIDPants</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAssetIDRightArm"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.GameSettingsAssetIDRightArm">GameSettingsAssetIDRightArm</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAssetIDRightLeg"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDRightLeg" class="dump-class-member-name">GameSettingsAssetIDRightLeg</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsAssetIDShirt" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDShirt" class="dump-class-member-name">GameSettingsAssetIDShirt</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAssetIDTeeShirt"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDTeeShirt" class="dump-class-member-name">GameSettingsAssetIDTeeShirt</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAssetIDTorso"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAssetIDTorso" class="dump-class-member-name">GameSettingsAssetIDTorso</a>: <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsAvatar"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsAvatar" class="dump-class-member-name">GameSettingsAvatar</a>: <a href="#GameAvatarType">GameAvatarType</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsR15Collision" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsR15Collision" class="dump-class-member-name">GameSettingsR15Collision</a>: <a href="#R15CollisionType">R15CollisionType</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsScaleRangeBodyType"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsScaleRangeBodyType" class="dump-class-member-name">GameSettingsScaleRangeBodyType</a>: <a href="#NumberRange">NumberRange</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsScaleRangeHead" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsScaleRangeHead" class="dump-class-member-name">GameSettingsScaleRangeHead</a>: <a href="#NumberRange">NumberRange</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsScaleRangeHeight" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StarterPlayer.GameSettingsScaleRangeHeight" class="dump-class-member-name">GameSettingsScaleRangeHeight</a>: <a href="#NumberRange">NumberRange</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.GameSettingsScaleRangeProportion"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.GameSettingsScaleRangeProportion">GameSettingsScaleRangeProportion</a>: <a href="#NumberRange">NumberRange</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StarterPlayer.GameSettingsScaleRangeWidth" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.GameSettingsScaleRangeWidth">GameSettingsScaleRangeWidth</a>: <a href="#NumberRange">NumberRange</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.HealthDisplayDistance"><div class="dump-class-property-signature"><a href="#StarterPlayer.HealthDisplayDistance" class="dump-class-member-name">HealthDisplayDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.LoadCharacterAppearance"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.LoadCharacterAppearance">LoadCharacterAppearance</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.NameDisplayDistance"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StarterPlayer.NameDisplayDistance">NameDisplayDistance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StarterPlayer.UserEmotesEnabled"><div class="dump-class-property-signature"><a href="#StarterPlayer.UserEmotesEnabled" class="dump-class-member-name">UserEmotesEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div id="StarterPlayer.ClearDefaults" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#StarterPlayer.ClearDefaults" class="dump-class-member-name">ClearDefaults</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

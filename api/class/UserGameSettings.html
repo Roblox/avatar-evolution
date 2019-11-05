@@ -1,0 +1,297 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>UserGameSettings</title></head><body><div class="dump-classes"><div id="UserGameSettings" class="dump-class"><a href="#UserGameSettings" class="dump-class-title">UserGameSettings</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="UserGameSettings.AllTutorialsDisabled"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.AllTutorialsDisabled">AllTutorialsDisabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.CameraMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.CameraMode">CameraMode</a>: <a href="#CustomCameraMode">CustomCameraMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.CameraYInverted"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.CameraYInverted">CameraYInverted</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.ChatVisible"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.ChatVisible">ChatVisible</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.ComputerCameraMovementMode"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.ComputerCameraMovementMode">ComputerCameraMovementMode</a>: <a href="#ComputerCameraMovementMode">ComputerCameraMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.ComputerMovementMode"><div class="dump-class-property-signature"><a href="#UserGameSettings.ComputerMovementMode" class="dump-class-member-name">ComputerMovementMode</a>: <a href="#ComputerMovementMode">ComputerMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.ControlMode" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#UserGameSettings.ControlMode" class="dump-class-member-name">ControlMode</a>: <a href="#ControlMode">ControlMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.Fullscreen"><div class="dump-class-property-signature"><a href="#UserGameSettings.Fullscreen" class="dump-class-member-name">Fullscreen</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.GamepadCameraSensitivity" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.GamepadCameraSensitivity">GamepadCameraSensitivity</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.HasEverUsedVR" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#UserGameSettings.HasEverUsedVR" class="dump-class-member-name">HasEverUsedVR</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.IsUsingCameraYInverted" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.IsUsingCameraYInverted">IsUsingCameraYInverted</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.IsUsingGamepadCameraSensitivity" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.IsUsingGamepadCameraSensitivity">IsUsingGamepadCameraSensitivity</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.MasterVolume"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.MasterVolume">MasterVolume</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.MicroProfilerWebServerEnabled"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.MicroProfilerWebServerEnabled">MicroProfilerWebServerEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.MicroProfilerWebServerIP"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.MicroProfilerWebServerIP">MicroProfilerWebServerIP</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.MicroProfilerWebServerPort"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.MicroProfilerWebServerPort">MicroProfilerWebServerPort</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.MouseSensitivity"><div class="dump-class-property-signature"><a href="#UserGameSettings.MouseSensitivity" class="dump-class-member-name">MouseSensitivity</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.MouseSensitivityFirstPerson"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.MouseSensitivityFirstPerson">MouseSensitivityFirstPerson</a>: <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.MouseSensitivityThirdPerson" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.MouseSensitivityThirdPerson">MouseSensitivityThirdPerson</a>: <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.OnScreenProfilerEnabled"><div class="dump-class-property-signature"><a href="#UserGameSettings.OnScreenProfilerEnabled" class="dump-class-member-name">OnScreenProfilerEnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.OnboardingsCompleted"><div class="dump-class-property-signature"><a href="#UserGameSettings.OnboardingsCompleted" class="dump-class-member-name">OnboardingsCompleted</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.PerformanceStatsVisible" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#UserGameSettings.PerformanceStatsVisible" class="dump-class-member-name">PerformanceStatsVisible</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.RCCProfilerRecordFrameRate" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.RCCProfilerRecordFrameRate">RCCProfilerRecordFrameRate</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.RCCProfilerRecordTimeFrame"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.RCCProfilerRecordTimeFrame">RCCProfilerRecordTimeFrame</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.RotationType" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.RotationType">RotationType</a>: <a href="#RotationType">RotationType</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.SavedQualityLevel" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.SavedQualityLevel">SavedQualityLevel</a>: <a href="#SavedQualitySetting">SavedQualitySetting</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.StartMaximized" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.StartMaximized">StartMaximized</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.StartScreenPosition"><div class="dump-class-property-signature"><a href="#UserGameSettings.StartScreenPosition" class="dump-class-member-name">StartScreenPosition</a>: <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.StartScreenSize"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.StartScreenSize">StartScreenSize</a>: <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.TouchCameraMovementMode"><div class="dump-class-property-signature"><a href="#UserGameSettings.TouchCameraMovementMode" class="dump-class-member-name">TouchCameraMovementMode</a>: <a href="#TouchCameraMovementMode">TouchCameraMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.TouchMovementMode"><div class="dump-class-property-signature"><a href="#UserGameSettings.TouchMovementMode" class="dump-class-member-name">TouchMovementMode</a>: <a href="#TouchMovementMode">TouchMovementMode</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.UsedCoreGuiIsVisibleToggle" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#UserGameSettings.UsedCoreGuiIsVisibleToggle" class="dump-class-member-name">UsedCoreGuiIsVisibleToggle</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.UsedCustomGuiIsVisibleToggle"><div class="dump-class-property-signature"><a href="#UserGameSettings.UsedCustomGuiIsVisibleToggle" class="dump-class-member-name">UsedCustomGuiIsVisibleToggle</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.UsedHideHudShortcut"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.UsedHideHudShortcut">UsedHideHudShortcut</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.VREnabled"><div class="dump-class-property-signature"><a href="#UserGameSettings.VREnabled" class="dump-class-member-name">VREnabled</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="UserGameSettings.VRRotationIntensity"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#UserGameSettings.VRRotationIntensity">VRRotationIntensity</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="UserGameSettings.GetCameraYInvertValue"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.GetCameraYInvertValue">GetCameraYInvertValue</a>() =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.GetOnboardingCompleted" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.GetOnboardingCompleted">GetOnboardingCompleted</a>(<div class="dump-function-argument">onboardingId: <a href="#string">string</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="UserGameSettings.GetTutorialState"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.GetTutorialState">GetTutorialState</a>(<div class="dump-function-argument">tutorialId: <a href="#string">string</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="UserGameSettings.InFullScreen"><div class="dump-function-signature"><a href="#UserGameSettings.InFullScreen" class="dump-class-member-name">InFullScreen</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="UserGameSettings.InStudioMode"><div class="dump-function-signature"><a href="#UserGameSettings.InStudioMode" class="dump-class-member-name">InStudioMode</a>() =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.ResetOnboardingCompleted" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.ResetOnboardingCompleted">ResetOnboardingCompleted</a>(<div class="dump-function-argument">onboardingId: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="UserGameSettings.SetCameraYInvertVisible"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.SetCameraYInvertVisible">SetCameraYInvertVisible</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.SetGamepadCameraSensitivityVisible" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.SetGamepadCameraSensitivityVisible">SetGamepadCameraSensitivityVisible</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="UserGameSettings.SetOnboardingCompleted"><div class="dump-function-signature"><a href="#UserGameSettings.SetOnboardingCompleted" class="dump-class-member-name">SetOnboardingCompleted</a>(<div class="dump-function-argument">onboardingId: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.SetTutorialState" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#UserGameSettings.SetTutorialState" class="dump-class-member-name">SetTutorialState</a>(<div class="dump-function-argument">tutorialId: <a href="#string">string</a>,</div><div class="dump-function-argument">value: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="UserGameSettings.FullscreenChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.FullscreenChanged">FullscreenChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">isFullscreen: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="UserGameSettings.PerformanceStatsVisibleChanged"><div class="dump-function-signature"><a class="dump-class-member-name" href="#UserGameSettings.PerformanceStatsVisibleChanged">PerformanceStatsVisibleChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">isPerformanceStatsVisible: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="UserGameSettings.StudioModeChanged" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#UserGameSettings.StudioModeChanged" class="dump-class-member-name">StudioModeChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">isStudioMode: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

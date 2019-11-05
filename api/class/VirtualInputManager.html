@@ -1,0 +1,269 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>VirtualInputManager</title></head><body><div class="dump-classes"><div id="VirtualInputManager" class="dump-class"><a href="#VirtualInputManager" class="dump-class-title">VirtualInputManager</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="VirtualInputManager.AdditionalLuaState"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#VirtualInputManager.AdditionalLuaState">AdditionalLuaState</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div id="VirtualInputManager.Dump" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.Dump">Dump</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.HandleGamepadAxisInput"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.HandleGamepadAxisInput">HandleGamepadAxisInput</a>(<div class="dump-function-argument">objectId: <a href="#int">int</a>,</div><div class="dump-function-argument">keyCode: <a href="#KeyCode">KeyCode</a>,</div><div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">z: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.HandleGamepadButtonInput"><div class="dump-function-signature"><a href="#VirtualInputManager.HandleGamepadButtonInput" class="dump-class-member-name">HandleGamepadButtonInput</a>(<div class="dump-function-argument">deviceId: <a href="#int">int</a>,</div><div class="dump-function-argument">keyCode: <a href="#KeyCode">KeyCode</a>,</div><div class="dump-function-argument">buttonState: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="VirtualInputManager.HandleGamepadConnect" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.HandleGamepadConnect">HandleGamepadConnect</a>(<div class="dump-function-argument">deviceId: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.HandleGamepadDisconnect"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.HandleGamepadDisconnect">HandleGamepadDisconnect</a>(<div class="dump-function-argument">deviceId: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendAccelerometerEvent"><div class="dump-function-signature"><a href="#VirtualInputManager.SendAccelerometerEvent" class="dump-class-member-name">SendAccelerometerEvent</a>(<div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">z: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendGravityEvent"><div class="dump-function-signature"><a href="#VirtualInputManager.SendGravityEvent" class="dump-class-member-name">SendGravityEvent</a>(<div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">z: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendGyroscopeEvent"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.SendGyroscopeEvent">SendGyroscopeEvent</a>(<div class="dump-function-argument">quatX: <a href="#float">float</a>,</div><div class="dump-function-argument">quatY: <a href="#float">float</a>,</div><div class="dump-function-argument">quatZ: <a href="#float">float</a>,</div><div class="dump-function-argument">quatW: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="VirtualInputManager.SendKeyEvent" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#VirtualInputManager.SendKeyEvent" class="dump-class-member-name">SendKeyEvent</a>(<div class="dump-function-argument">isPressed: <a href="#bool">bool</a>,</div><div class="dump-function-argument">keyCode: <a href="#KeyCode">KeyCode</a>,</div><div class="dump-function-argument">isRepeatedKey: <a href="#bool">bool</a>,</div><div class="dump-function-argument">pluginGui: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendMouseButtonEvent"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.SendMouseButtonEvent">SendMouseButtonEvent</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">mouseButton: <a href="#int">int</a>,</div><div class="dump-function-argument">isDown: <a href="#bool">bool</a>,</div><div class="dump-function-argument">pluginGui: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="VirtualInputManager.SendMouseMoveEvent" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#VirtualInputManager.SendMouseMoveEvent" class="dump-class-member-name">SendMouseMoveEvent</a>(<div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">pluginGui: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendMouseWheelEvent"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.SendMouseWheelEvent">SendMouseWheelEvent</a>(<div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">isForwardScroll: <a href="#bool">bool</a>,</div><div class="dump-function-argument">pluginGui: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendTextInputCharacterEvent"><div class="dump-function-signature"><a href="#VirtualInputManager.SendTextInputCharacterEvent" class="dump-class-member-name">SendTextInputCharacterEvent</a>(<div class="dump-function-argument">str: <a href="#string">string</a>,</div><div class="dump-function-argument">pluginGui: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.SendTouchEvent"><div class="dump-function-signature"><a href="#VirtualInputManager.SendTouchEvent" class="dump-class-member-name">SendTouchEvent</a>(<div class="dump-function-argument">touchId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">state: <a href="#int">int</a>,</div><div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.StartPlaying"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.StartPlaying">StartPlaying</a>(<div class="dump-function-argument">fileName: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="VirtualInputManager.StartRecording" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.StartRecording">StartRecording</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="VirtualInputManager.StopRecording" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#VirtualInputManager.StopRecording" class="dump-class-member-name">StopRecording</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="VirtualInputManager.sendRobloxEvent"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.sendRobloxEvent">sendRobloxEvent</a>(<div class="dump-function-argument">namespace: <a href="#string">string</a>,</div><div class="dump-function-argument">detail: <a href="#string">string</a>,</div><div class="dump-function-argument">detailType: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="VirtualInputManager.PlaybackCompleted"><div class="dump-function-signature"><a class="dump-class-member-name" href="#VirtualInputManager.PlaybackCompleted">PlaybackCompleted</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">additionalLuaState: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="VirtualInputManager.RecordingCompleted"><div class="dump-function-signature"><a href="#VirtualInputManager.RecordingCompleted" class="dump-class-member-name">RecordingCompleted</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">result: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

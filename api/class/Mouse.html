@@ -1,0 +1,272 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Mouse</title></head><body><div class="dump-classes"><div id="Mouse" class="dump-class"><a class="dump-class-title" href="#Mouse">Mouse</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotCreatable</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>Used to receive input from the user. Actually tracks mouse events and keyboard events.</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="Mouse.Hit" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Mouse.Hit" class="dump-class-member-name">Hit</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The CoordinateFrame of where the Mouse ray is currently hitting a 3D object in the Workspace.  If the mouse is not over any 3D objects in the Workspace, this property is nil.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Mouse.Icon" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.Icon">Icon</a>: <a href="#Content">Content</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The current Texture of the Mouse Icon. Stored as a string, for more information on how to format the string <a href='http://wiki.roblox.com/index.php/Content' target='_blank'>go here</a></p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Mouse.Origin"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.Origin">Origin</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The CoordinateFrame of where the Mouse is when the mouse is not clicking.  This CoordinateFrame will be very close to the Camera.CoordinateFrame.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Mouse.Target"><div class="dump-class-property-signature"><a href="#Mouse.Target" class="dump-class-member-name">Target</a>: <a href="#BasePart">BasePart</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The Part the mouse is currently over. If the mouse is not currently over any object (on the skybox, for example) this property is nil.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.TargetFilter" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Mouse.TargetFilter" class="dump-class-member-name">TargetFilter</a>: <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A Part or Model that the Mouse will ignore when trying to find the Target, TargetSurface and Hit.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Mouse.TargetSurface"><div class="dump-class-property-signature"><a href="#Mouse.TargetSurface" class="dump-class-member-name">TargetSurface</a>: <a href="#NormalId">NormalId</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The NormalId (Top, Left, Down, etc.) of the face of the part the Mouse is currently over.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.UnitRay" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.UnitRay">UnitRay</a>: <a href="#Ray">Ray</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The Unit Ray from where the mouse is (Origin) to the current Mouse.Target.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Mouse.ViewSizeX"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.ViewSizeX">ViewSizeX</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The viewport's (game window) width in pixels.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Mouse.ViewSizeY"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.ViewSizeY">ViewSizeY</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The viewport's (game window) height in pixels.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Mouse.X"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.X">X</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The absolute pixel position of the Mouse along the x-axis of the viewport (game window). Values start at 0 on the left hand side of the screen and increase to the right.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.Y" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.Y">Y</a>: <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The absolute pixel position of the Mouse along the y-axis of the viewport (game window). Values start at 0 on the top of the screen and increase to the bottom.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Mouse.hit" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.hit">hit</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>hit</code> is deprecated. Use <code>Hit</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div><div id="Mouse.target" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Mouse.target">target</a>: <a href="#BasePart">BasePart</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>target</code> is deprecated. Use <code>Target</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="Mouse.Button1Down"><div class="dump-function-signature"><a href="#Mouse.Button1Down" class="dump-class-member-name">Button1Down</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the first button (usually the left, but could be another) on the mouse is depressed.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="Mouse.Button1Up"><div class="dump-function-signature"><a href="#Mouse.Button1Up" class="dump-class-member-name">Button1Up</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the first button (usually the left, but could be another) on the mouse is release.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="Mouse.Button2Down"><div class="dump-function-signature"><a href="#Mouse.Button2Down" class="dump-class-member-name">Button2Down</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This event is currently non-operational.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="Mouse.Button2Up"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Mouse.Button2Up">Button2Up</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This event is currently non-operational.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.Idle" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Mouse.Idle">Idle</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired constantly when the mouse is not firing any other event (i.e. the mouse isn't moving, nor any buttons being pressed or depressed).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event dump-member-deprecated" id="Mouse.KeyDown"><div class="dump-function-signature"><a href="#Mouse.KeyDown" class="dump-class-member-name">KeyDown</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user presses a key on the keyboard. Argument is a string representation of the key.  If the key has no string representation (such as space), the string passed in is the keycode for that character. Keycodes are currently in ASCII.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event dump-member-deprecated" id="Mouse.KeyUp"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Mouse.KeyUp">KeyUp</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when a user releases a key on the keyboard. Argument is a string representation of the key.  If the key has no string representation (such as space), the string passed in is the keycode for that character. Keycodes are currently in ASCII.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.Move" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Mouse.Move">Move</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse X or Y member changes.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.WheelBackward" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Mouse.WheelBackward">WheelBackward</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This event is currently non-operational.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Mouse.WheelForward" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Mouse.WheelForward">WheelForward</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This event is currently non-operational.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event dump-member-deprecated" id="Mouse.keyDown"><div class="dump-function-signature"><a href="#Mouse.keyDown" class="dump-class-member-name">keyDown</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">key: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>keyDown</code> is deprecated. Use <code>KeyDown</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div></div></div></body></html>

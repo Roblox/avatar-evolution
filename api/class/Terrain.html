@@ -1,0 +1,284 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Terrain</title></head><body><div class="dump-classes"><div id="Terrain" class="dump-class"><a href="#Terrain" class="dump-class-title">Terrain</a><p class="dump-class-inherits">Inherits: <a href="#BasePart">BasePart</a></p><p class="dump-class-tags">Tags: NotCreatable</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>Object representing a high performance bounded grid of static 4x4 parts</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="Terrain.IsSmooth" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a href="#Terrain.IsSmooth" class="dump-class-member-name">IsSmooth</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.MaterialColors" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Terrain.MaterialColors" class="dump-class-member-name">MaterialColors</a>: <a href="#BinaryString">BinaryString</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.MaxExtents" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Terrain.MaxExtents" class="dump-class-member-name">MaxExtents</a>: <a href="#Region3int16">Region3int16</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Terrain.WaterColor"><div class="dump-class-property-signature"><a href="#Terrain.WaterColor" class="dump-class-member-name">WaterColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.WaterReflectance" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Terrain.WaterReflectance" class="dump-class-member-name">WaterReflectance</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Terrain.WaterTransparency"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Terrain.WaterTransparency">WaterTransparency</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Terrain.WaterWaveSize"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Terrain.WaterWaveSize">WaterWaveSize</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Terrain.WaterWaveSpeed"><div class="dump-class-property-signature"><a href="#Terrain.WaterWaveSpeed" class="dump-class-member-name">WaterWaveSpeed</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function dump-member-deprecated" id="Terrain.AutowedgeCell"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.AutowedgeCell">AutowedgeCell</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.AutowedgeCells" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.AutowedgeCells">AutowedgeCells</a>(<div class="dump-function-argument">region: <a href="#Region3int16">Region3int16</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.CellCenterToWorld" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Terrain.CellCenterToWorld" class="dump-class-member-name">CellCenterToWorld</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a></div>) =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.CellCornerToWorld" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Terrain.CellCornerToWorld" class="dump-class-member-name">CellCornerToWorld</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a></div>) =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.Clear"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.Clear">Clear</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.ConvertToSmooth" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.ConvertToSmooth">ConvertToSmooth</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.CopyRegion"><div class="dump-function-signature"><a href="#Terrain.CopyRegion" class="dump-class-member-name">CopyRegion</a>(<div class="dump-function-argument">region: <a href="#Region3int16">Region3int16</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.CountCells"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.CountCells">CountCells</a>() =&gt; <a href="#int">int</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.FillBall"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.FillBall">FillBall</a>(<div class="dump-function-argument">center: <a href="#Vector3">Vector3</a>,</div><div class="dump-function-argument">radius: <a href="#float">float</a>,</div><div class="dump-function-argument">material: <a href="#Material">Material</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.FillBlock" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.FillBlock">FillBlock</a>(<div class="dump-function-argument">cframe: <a href="#CFrame">CFrame</a>,</div><div class="dump-function-argument">size: <a href="#Vector3">Vector3</a>,</div><div class="dump-function-argument">material: <a href="#Material">Material</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.FillCylinder"><div class="dump-function-signature"><a href="#Terrain.FillCylinder" class="dump-class-member-name">FillCylinder</a>(<div class="dump-function-argument">cframe: <a href="#CFrame">CFrame</a>,</div><div class="dump-function-argument">height: <a href="#float">float</a>,</div><div class="dump-function-argument">radius: <a href="#float">float</a>,</div><div class="dump-function-argument">material: <a href="#Material">Material</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.FillRegion"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.FillRegion">FillRegion</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">resolution: <a href="#float">float</a>,</div><div class="dump-function-argument">material: <a href="#Material">Material</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.GetCell" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.GetCell">GetCell</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns CellMaterial, CellBlock, CellOrientation</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.GetMaterialColor"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.GetMaterialColor">GetMaterialColor</a>(<div class="dump-function-argument">material: <a href="#Material">Material</a></div>) =&gt; <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Terrain.GetWaterCell"><div class="dump-function-signature"><a href="#Terrain.GetWaterCell" class="dump-class-member-name">GetWaterCell</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns hasAnyWater, WaterForce, WaterDirection</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.ImportHeightMap"><div class="dump-function-signature"><a href="#Terrain.ImportHeightMap" class="dump-class-member-name">ImportHeightMap</a>(<div class="dump-function-argument">heightMapBinary: <a href="#string">string</a>,</div><div class="dump-function-argument">colorMapBinary: <a href="#string">string</a>,</div><div class="dump-function-argument">region: <a href="#Region3">Region3</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.PasteRegion"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.PasteRegion">PasteRegion</a>(<div class="dump-function-argument">region: <a href="#Instance">Instance</a>,</div><div class="dump-function-argument">corner: <a href="#Vector3int16">Vector3int16</a>,</div><div class="dump-function-argument">pasteEmptyCells: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.ReadVoxels"><div class="dump-function-signature"><a href="#Terrain.ReadVoxels" class="dump-class-member-name">ReadVoxels</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">resolution: <a href="#float">float</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.ReplaceMaterial" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Terrain.ReplaceMaterial" class="dump-class-member-name">ReplaceMaterial</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">resolution: <a href="#float">float</a>,</div><div class="dump-function-argument">sourceMaterial: <a href="#Material">Material</a>,</div><div class="dump-function-argument">targetMaterial: <a href="#Material">Material</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Terrain.SetCell"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.SetCell">SetCell</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a>,</div><div class="dump-function-argument">material: <a href="#CellMaterial">CellMaterial</a>,</div><div class="dump-function-argument">block: <a href="#CellBlock">CellBlock</a>,</div><div class="dump-function-argument">orientation: <a href="#CellOrientation">CellOrientation</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.SetCells" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.SetCells">SetCells</a>(<div class="dump-function-argument">region: <a href="#Region3int16">Region3int16</a>,</div><div class="dump-function-argument">material: <a href="#CellMaterial">CellMaterial</a>,</div><div class="dump-function-argument">block: <a href="#CellBlock">CellBlock</a>,</div><div class="dump-function-argument">orientation: <a href="#CellOrientation">CellOrientation</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Terrain.SetMaterialColor"><div class="dump-function-signature"><a href="#Terrain.SetMaterialColor" class="dump-class-member-name">SetMaterialColor</a>(<div class="dump-function-argument">material: <a href="#Material">Material</a>,</div><div class="dump-function-argument">value: <a href="#Color3">Color3</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.SetWaterCell" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.SetWaterCell">SetWaterCell</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a>,</div><div class="dump-function-argument">z: <a href="#int">int</a>,</div><div class="dump-function-argument">force: <a href="#WaterForce">WaterForce</a>,</div><div class="dump-function-argument">direction: <a href="#WaterDirection">WaterDirection</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.WorldToCell" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.WorldToCell">WorldToCell</a>(<div class="dump-function-argument">position: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.WorldToCellPreferEmpty" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Terrain.WorldToCellPreferEmpty" class="dump-class-member-name">WorldToCellPreferEmpty</a>(<div class="dump-function-argument">position: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.WorldToCellPreferSolid" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Terrain.WorldToCellPreferSolid">WorldToCellPreferSolid</a>(<div class="dump-function-argument">position: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Terrain.WriteVoxels" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#Terrain.WriteVoxels" class="dump-class-member-name">WriteVoxels</a>(<div class="dump-function-argument">region: <a href="#Region3">Region3</a>,</div><div class="dump-function-argument">resolution: <a href="#float">float</a>,</div><div class="dump-function-argument">materials: <a href="#Array">Array</a>,</div><div class="dump-function-argument">occupancy: <a href="#Array">Array</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div id="Terrain.TerrainProgressUpdate" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#Terrain.TerrainProgressUpdate" class="dump-class-member-name">TerrainProgressUpdate</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">progressRatio: <a href="#float">float</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

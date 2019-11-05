@@ -1,0 +1,282 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>StudioService</title></head><body><div class="dump-classes"><div id="StudioService" class="dump-class"><a href="#StudioService" class="dump-class-title">StudioService</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotCreatable, NotReplicated, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>A service for interfacing with the current studio state from Lua.</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="StudioService.ActiveScript" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#StudioService.ActiveScript" class="dump-class-member-name">ActiveScript</a>: <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StudioService.GridSize"><div class="dump-class-property-signature"><a href="#StudioService.GridSize" class="dump-class-member-name">GridSize</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StudioService.RotateIncrement"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StudioService.RotateIncrement">RotateIncrement</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StudioService.StudioLocaleId"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StudioService.StudioLocaleId">StudioLocaleId</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="StudioService.UseLocalSpace"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#StudioService.UseLocalSpace">UseLocalSpace</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="StudioService.ConvertToPackageUpload"><div class="dump-function-signature"><a href="#StudioService.ConvertToPackageUpload" class="dump-class-member-name">ConvertToPackageUpload</a>(<div class="dump-function-argument">uploadUrl: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.CopyToClipboard" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#StudioService.CopyToClipboard" class="dump-class-member-name">CopyToClipboard</a>(<div class="dump-function-argument">stringToCopy: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.EmitPlacePublishedSignal"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.EmitPlacePublishedSignal">EmitPlacePublishedSignal</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.GetClassIcon" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.GetClassIcon">GetClassIcon</a>(<div class="dump-function-argument">className: <a href="#string">string</a></div>) =&gt; <a href="#Dictionary">Dictionary</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.GetResourceByCategory"><div class="dump-function-signature"><a href="#StudioService.GetResourceByCategory" class="dump-class-member-name">GetResourceByCategory</a>(<div class="dump-function-argument">category: <a href="#string">string</a></div>) =&gt; <a href="#Dictionary">Dictionary</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.GetUserId"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.GetUserId">GetUserId</a>() =&gt; <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.IsPluginInstalled" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.IsPluginInstalled">IsPluginInstalled</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.IsPluginUpToDate" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#StudioService.IsPluginUpToDate" class="dump-class-member-name">IsPluginUpToDate</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">currentAssetVersion: <a href="#int64">int64</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.OpenPluginInsertPage"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.OpenPluginInsertPage">OpenPluginInsertPage</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.PublishAs" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.PublishAs">PublishAs</a>(<div class="dump-function-argument">universeId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">placeId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.SerializeInstances" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#StudioService.SerializeInstances" class="dump-class-member-name">SerializeInstances</a>(<div class="dump-function-argument">instances: <a href="#Objects">Objects</a></div>) =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.SetPluginEnabled"><div class="dump-function-signature"><a href="#StudioService.SetPluginEnabled" class="dump-class-member-name">SetPluginEnabled</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">state: <a href="#bool">bool</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.SetUniverseDisplayName"><div class="dump-function-signature"><a href="#StudioService.SetUniverseDisplayName" class="dump-class-member-name">SetUniverseDisplayName</a>(<div class="dump-function-argument">newName: <a href="#string">string</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.ShowPublishToRoblox" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#StudioService.ShowPublishToRoblox" class="dump-class-member-name">ShowPublishToRoblox</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.UninstallPlugin"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.UninstallPlugin">UninstallPlugin</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.UpdatePluginManagement"><div class="dump-function-signature"><a href="#StudioService.UpdatePluginManagement" class="dump-class-member-name">UpdatePluginManagement</a>() =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.GetInstalledPluginData" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.GetInstalledPluginData">GetInstalledPluginData</a>() =&gt; <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.PromptImportFile"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.PromptImportFile">PromptImportFile</a>(<div class="dump-function-argument">fileTypeFilter: <a href="#Array">Array</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.PromptImportFiles"><div class="dump-function-signature"><a href="#StudioService.PromptImportFiles" class="dump-class-member-name">PromptImportFiles</a>(<div class="dump-function-argument">fileTypeFilter: <a href="#Array">Array</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.PromptImportLocalAsset" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.PromptImportLocalAsset">PromptImportLocalAsset</a>(<div class="dump-function-argument">prompt: <a href="#string">string</a>,</div><div class="dump-function-argument">fileTypeFilter: <a href="#Array">Array</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="StudioService.PromptImportLocalAssets"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.PromptImportLocalAssets">PromptImportLocalAssets</a>(<div class="dump-function-argument">prompt: <a href="#string">string</a>,</div><div class="dump-function-argument">fileTypeFilter: <a href="#Array">Array</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="StudioService.TryInstallPlugin"><div class="dump-function-signature"><a href="#StudioService.TryInstallPlugin" class="dump-class-member-name">TryInstallPlugin</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">assetVersionId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div id="StudioService.GamePublishFinished" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#StudioService.GamePublishFinished" class="dump-class-member-name">GamePublishFinished</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">success: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="StudioService.OnConvertToPackageResult"><div class="dump-function-signature"><a href="#StudioService.OnConvertToPackageResult" class="dump-class-member-name">OnConvertToPackageResult</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">isSuccessful: <a href="#bool">bool</a>,</div><div class="dump-function-argument">errorMessage: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.OnOpenConvertToPackagePlugin" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.OnOpenConvertToPackagePlugin">OnOpenConvertToPackagePlugin</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">instances: <a href="#Objects">Objects</a>,</div><div class="dump-function-argument">name: <a href="#string">string</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="StudioService.OnOpenManagePackagePlugin"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.OnOpenManagePackagePlugin">OnOpenManagePackagePlugin</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a>,</div><div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="StudioService.OnPluginInstalledFromToolbox"><div class="dump-function-signature"><a href="#StudioService.OnPluginInstalledFromToolbox" class="dump-class-member-name">OnPluginInstalledFromToolbox</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="StudioService.OnPublishPlaceToRoblox"><div class="dump-function-signature"><a class="dump-class-member-name" href="#StudioService.OnPublishPlaceToRoblox">OnPublishPlaceToRoblox</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="StudioService.OnSaveToRoblox" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a href="#StudioService.OnSaveToRoblox" class="dump-class-member-name">OnSaveToRoblox</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">instances: <a href="#Objects">Objects</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

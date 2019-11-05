@@ -1,0 +1,278 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Camera</title></head><body><div class="dump-classes"><div class="dump-class" id="Camera"><a class="dump-class-title" href="#Camera">Camera</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotReplicated</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="Camera.CFrame"><div class="dump-class-property-signature"><a href="#Camera.CFrame" class="dump-class-member-name">CFrame</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The current position and rotation of the Camera.  For most CameraTypes, the rotation is set such that the CoordinateFrame lookVector is pointing at the Focus.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Camera.CameraSubject"><div class="dump-class-property-signature"><a href="#Camera.CameraSubject" class="dump-class-member-name">CameraSubject</a>: <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Where the Camera's focus is.  Any rotation of the camera will be about this subject.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Camera.CameraType" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.CameraType">CameraType</a>: <a href="#CameraType">CameraType</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Defines how the camera will behave. <a href='http://wiki.roblox.com/index.php/CameraType' target='_blank'>More info</a></p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Camera.CoordinateFrame"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.CoordinateFrame">CoordinateFrame</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The current position and rotation of the Camera.  For most CameraTypes, the rotation is set such that the CoordinateFrame lookVector is pointing at the Focus.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Camera.FieldOfView"><div class="dump-class-property-signature"><a href="#Camera.FieldOfView" class="dump-class-member-name">FieldOfView</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The current angle, or width, of what the camera can see.  Current acceptable values are from 20 degrees to 80.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Camera.Focus" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.Focus">Focus</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The current CoordinateFrame that the camera is looking at.  Note: it is not always guaranteed that the camera is always looking here.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Camera.HeadLocked"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.HeadLocked">HeadLocked</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Camera.HeadScale" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.HeadScale">HeadScale</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Camera.NearPlaneZ"><div class="dump-class-property-signature"><a href="#Camera.NearPlaneZ" class="dump-class-member-name">NearPlaneZ</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The negative z-offset of the view frustum's near clipping plane.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Camera.ViewportSize"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.ViewportSize">ViewportSize</a>: <a href="#Vector2">Vector2</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Holds the x,y screen resolution of the viewport the camera is presenting (note: this can differ from the AbsoluteSize property of a full screen gui).</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Camera.focus"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Camera.focus">focus</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>focus</code> is deprecated. Use <code>Focus</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="Camera.GetLargestCutoffDistance"><div class="dump-function-signature"><a href="#Camera.GetLargestCutoffDistance" class="dump-class-member-name">GetLargestCutoffDistance</a>(<div class="dump-function-argument">ignoreList: <a href="#Objects">Objects</a></div>) =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.GetPanSpeed"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.GetPanSpeed">GetPanSpeed</a>() =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.GetPartsObscuringTarget"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.GetPartsObscuringTarget">GetPartsObscuringTarget</a>(<div class="dump-function-argument">castPoints: <a href="#Array">Array</a>,</div><div class="dump-function-argument">ignoreList: <a href="#Objects">Objects</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Camera.GetRenderCFrame" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.GetRenderCFrame">GetRenderCFrame</a>() =&gt; <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.GetRoll"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.GetRoll">GetRoll</a>() =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns the camera's current roll. Roll is defined in radians, and is stored as the delta from the camera's y axis default normal vector.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Camera.GetTiltSpeed" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.GetTiltSpeed">GetTiltSpeed</a>() =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.Interpolate"><div class="dump-function-signature"><a href="#Camera.Interpolate" class="dump-class-member-name">Interpolate</a>(<div class="dump-function-argument">endPos: <a href="#CFrame">CFrame</a>,</div><div class="dump-function-argument">endFocus: <a href="#CFrame">CFrame</a>,</div><div class="dump-function-argument">duration: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.PanUnits"><div class="dump-function-signature"><a href="#Camera.PanUnits" class="dump-class-member-name">PanUnits</a>(<div class="dump-function-argument">units: <a href="#int">int</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.ScreenPointToRay"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.ScreenPointToRay">ScreenPointToRay</a>(<div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">depth: <a href="#float">float</a></div>) =&gt; <a href="#Ray">Ray</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Takes a 2D screen position and produces a Ray object to be used for 3D raycasting. Input is x,y screen coordinates, and a (optional, defaults to 0) z position which sets how far in the camera look vector to start the ray origin.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function" id="Camera.SetCameraPanMode"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.SetCameraPanMode">SetCameraPanMode</a>(<div class="dump-function-argument">mode: <a href="#CameraPanMode">CameraPanMode</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.SetImageServerView"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.SetImageServerView">SetImageServerView</a>(<div class="dump-function-argument">modelCoord: <a href="#CFrame">CFrame</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="Camera.SetRoll"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.SetRoll">SetRoll</a>(<div class="dump-function-argument">rollAngle: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Sets the camera's current roll. Roll is defined in radians, and is stored as the delta from the camera's y axis default normal vector.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Camera.TiltUnits"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.TiltUnits">TiltUnits</a>(<div class="dump-function-argument">units: <a href="#int">int</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Camera.ViewportPointToRay" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.ViewportPointToRay">ViewportPointToRay</a>(<div class="dump-function-argument">x: <a href="#float">float</a>,</div><div class="dump-function-argument">y: <a href="#float">float</a>,</div><div class="dump-function-argument">depth: <a href="#float">float</a></div>) =&gt; <a href="#Ray">Ray</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Same as ScreenPointToRay, except no GUI offsets are taken into account. Useful for things like casting a ray from the middle of the Camera.ViewportSize</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function" id="Camera.WorldToScreenPoint"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.WorldToScreenPoint">WorldToScreenPoint</a>(<div class="dump-function-argument">worldPoint: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Takes a 3D position in the world and projects it onto x,y coordinates of screen space. Returns two values, first is a Vector3 that has x,y position and z position which is distance from camera (negative if behind camera, positive if in front). Second return value is a boolean indicating if the first argument is an on-screen coordinate.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Camera.WorldToViewportPoint"><div class="dump-function-signature"><a href="#Camera.WorldToViewportPoint" class="dump-class-member-name">WorldToViewportPoint</a>(<div class="dump-function-argument">worldPoint: <a href="#Vector3">Vector3</a></div>) =&gt; <a href="#Tuple">Tuple</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Same as WorldToScreenPoint, except no GUI offsets are taken into account.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function" id="Camera.Zoom"><div class="dump-function-signature"><a href="#Camera.Zoom" class="dump-class-member-name">Zoom</a>(<div class="dump-function-argument">distance: <a href="#float">float</a></div>) =&gt; <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="Camera.FirstPersonTransition"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.FirstPersonTransition">FirstPersonTransition</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">entering: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="Camera.InterpolationFinished"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Camera.InterpolationFinished">InterpolationFinished</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div></div></div></div></div></body></html>

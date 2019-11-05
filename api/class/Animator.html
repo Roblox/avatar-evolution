@@ -1,0 +1,271 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Animator</title></head><body><div class="dump-classes"><div class="dump-class" id="Animator"><a href="#Animator" class="dump-class-title">Animator</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>The Animator handles the animation of animatable joints in a <a href="Model" title="Model">Model</a>.</p>
+<p>It blends and interpolates between keyframes in multiple playing <a href="AnimationTrack" title="AnimationTrack">AnimationTracks</a> to update joint target poses every frame.</p>
+<h2>Animatable Joints</h2>
+<p>Animator searches for animatable joints (including <a href="Motor6D" title="Motor6D">Motor6Ds</a> and legacy <a href="Motor" title="Motor">Motors</a>) in descendants of it's ancestor <a href="Model" title="Model">Model</a>.</p>
+<p>Animator matches animatable joints to poses stored in an <a href="Animation" title="Animation">Animation</a> asset based on the names of the parts the joint is connected to. For a <a href="Motor6D" title="Motor6D">Motor6D</a>, <code>Part0.Name</code> is the &quot;parent&quot; name, and <code>Part1.Name</code> is the &quot;child&quot; name.</p>
+<p>Inside of every Animation asset model file is a <a href="KeyframeSequence" title="KeyframeSequence">KeyframeSequence</a> containing several <a href="Keyframe" title="Keyframe">Keyframe</a> instances, each containing a tree of <a href="Pose" title="Pose">Poses</a>. The poses are matched to joints where <code>Pose.Parent.Name</code> is the &quot;parent&quot; name, and <code>Pose.Name</code> is the &quot;child&quot; name.</p>
+<p>The Animator ignores the <a href="Instance#Name" title="Instance.Name">names</a> of the joints themselves.</p>
+<h2>Animation Step</h2>
+<p>Animators are stepped every frame <em>before</em> <a href="RunService#Stepped" title="RunService.Stepped">RunService.Stepped</a>. This updates the target poses of animatable joints, like <a href="Motor6D#Transform" title="Motor6D.Transform">Motor6D.Transform</a>. The actual updating of the relative positions of the animated parts is defered until the internal <code>physicsStepped</code>, <em>after</em> <a href="RunService#Stepped" title="RunService.Stepped">Stepped</a>.</p>
+<p>For each joint the Animator will blend the the interpolated poses between keyframes in playing <a href="AnimationTrack" title="AnimationTrack">AnimationTrack</a>s within the same <a href="AnimationTrack#Priority" title="AnimationTrack.Priority">Priority</a> according to their [AnimationTrack.Weight]. AnimationTracks playing with a higher priority override any tracks playing with a lower priority.</p>
+<p>If the sum of the [Weights][AnimationTrack.Weight] add up to more than 1, some tracks may be ignored.</p>
+<p>If an Animator's model has no animated joints available it will stop any playing <a href="AnimationTrack" title="AnimationTrack">AnimationTracks</a> on the next step.</p>
+<h2>Replication</h2>
+<p>The replication of playing animations is handled through special internal <a href="RemoteEvent" title="RemoteEvent">RemoteEvents</a> on the Animator itself.</p>
+<p>If the Animator is the descendant of a <a href="Player#Character" title="Player.Character">Character</a> then animations started by that player can replicate to other clients. Otherwise animations started by <a href="LocalScript" title="LocalScript">LocalScript</a>s will only play locally.</p>
+<p>There is a limit of 10 unique playing animations that can be replicated at any one time.</p>
+</div><div class="dump-class-description-meta"><span class="dump-info" title="Content source: Dumpling Supplemental"/></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="Animator.LoadAnimation"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Animator.LoadAnimation">LoadAnimation</a>(<div class="dump-function-argument">animation: <a href="#Animation">Animation</a></div>) =&gt; <a href="#AnimationTrack">AnimationTrack</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Loads an <a href="AnimationTrack" title="AnimationTrack">AnimationTrack</a> from an animation asset represented by an <a href="Animation" title="Animation">Animation</a>. The animation is not started automatically, but can be started by calling <a href="AnimationTrack#Play" title="AnimationTrack.Play">AnimationTrack.Play</a>.</p>
+<p>The animation will fail to load if it is not owned by the owner of the current place.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Supplemental"/></div></div><div class="dump-function-returns"><div class="dump-class-member-subtitle">Parameters</div><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>animation</td><td><a href="#Animation">Animation</a></td><td><p>An Animation representing the animation asset to load.</p>
+</td></tr></tbody></table></div><div class="dump-function-returns"><div class="dump-class-member-subtitle">Returns</div><table><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><a href="#AnimationTrack">AnimationTrack</a></td><td><p>The loaded <a href="AnimationTrack" title="AnimationTrack">AnimationTrack</a>.</p>
+</td></tr></tbody></table></div></div><div id="Animator.StepAnimations" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Animator.StepAnimations">StepAnimations</a>(<div class="dump-function-argument">deltaTime: <a href="#float">float</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Manually steps animations while the game is not running. Intended for previewing animations in Studio edit mode.</p>
+<p>Updates the target poses of animatable joints and updates the relative positions of parts if the joints are <a href="JointInstance#Active" title="JointInstance.Active">Active</a>.</p>
+<p>Throws if the game is running.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Supplemental"/></div></div><div class="dump-function-returns"><div class="dump-class-member-subtitle">Parameters</div><table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>deltaTime</td><td><a href="#float">float</a></td><td><p>The amount of time in seconds to advance playing animations by.</p>
+</td></tr></tbody></table></div></div></div></div></div></div></body></html>

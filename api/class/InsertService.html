@@ -1,0 +1,266 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>InsertService</title></head><body><div class="dump-classes"><div id="InsertService" class="dump-class"><a class="dump-class-title" href="#InsertService">InsertService</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotCreatable, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>A service used to insert objects stored on the website into the game.</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="InsertService.AllowClientInsertModels" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#InsertService.AllowClientInsertModels">AllowClientInsertModels</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Can be set in non-filtering-enabled places to allow LoadAsset to be used in LocalScripts.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="InsertService.AllowInsertFreeModels" class="dump-class-member dump-class-property dump-member-deprecated"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#InsertService.AllowInsertFreeModels">AllowInsertFreeModels</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Allows free models to be inserted into place.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function dump-member-deprecated" id="InsertService.ApproveAssetId"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.ApproveAssetId">ApproveAssetId</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Deprecated</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="InsertService.ApproveAssetVersionId"><div class="dump-function-signature"><a href="#InsertService.ApproveAssetVersionId" class="dump-class-member-name">ApproveAssetVersionId</a>(<div class="dump-function-argument">assetVersionId: <a href="#int64">int64</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Deprecated</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="InsertService.Insert"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.Insert">Insert</a>(<div class="dump-function-argument">instance: <a href="#Instance">Instance</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Inserts the Instance into the workspace.  It is recommended to use Instance.Parent = game.Workspace instead, as this can cause issues currently.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="InsertService.LoadLocalAsset" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.LoadLocalAsset">LoadLocalAsset</a>(<div class="dump-function-argument">assetPath: <a href="#string">string</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.LoadPackageAsset"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.LoadPackageAsset">LoadPackageAsset</a>(<div class="dump-function-argument">url: <a href="#Content">Content</a></div>) =&gt; <a href="#Objects">Objects</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="InsertService.GetBaseCategories"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetBaseCategories">GetBaseCategories</a>() =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Deprecated. Use GetBaseSets() instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.GetBaseSets"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetBaseSets">GetBaseSets</a>() =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns a table containing a list of the various setIds that are ROBLOX approved. <a href='http://wiki.roblox.com/index.php/Sets' target='_blank'>More info on sets</a></p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="InsertService.GetCollection" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a href="#InsertService.GetCollection" class="dump-class-member-name">GetCollection</a>(<div class="dump-function-argument">categoryId: <a href="#int64">int64</a></div>) =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns a table for the assets stored in the category.  A category is an setId from www.roblox.com that links to a set.  <a href='http://wiki.roblox.com/index.php?title=API:Class/InsertService/GetCollection' target='_blank'>More info on table format</a>. <a href='http://wiki.roblox.com/index.php/Sets' target='_blank'>More info on sets</a></p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.GetFreeDecals"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetFreeDecals">GetFreeDecals</a>(<div class="dump-function-argument">searchText: <a href="#string">string</a>,</div><div class="dump-function-argument">pageNum: <a href="#int">int</a></div>) =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.GetFreeModels"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetFreeModels">GetFreeModels</a>(<div class="dump-function-argument">searchText: <a href="#string">string</a>,</div><div class="dump-function-argument">pageNum: <a href="#int">int</a></div>) =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.GetLatestAssetVersionAsync"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetLatestAssetVersionAsync">GetLatestAssetVersionAsync</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#int64">int64</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="InsertService.GetUserCategories"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetUserCategories">GetUserCategories</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>) =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Deprecated. Use GetUserSets() instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.GetUserSets"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.GetUserSets">GetUserSets</a>(<div class="dump-function-argument">userId: <a href="#int64">int64</a></div>) =&gt; <a href="#Array">Array</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns a table containing a list of the various setIds that correspond to argument 'userId'. <a href='http://wiki.roblox.com/index.php/Sets' target='_blank'>More info on sets</a></p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.LoadAsset"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.LoadAsset">LoadAsset</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns a Model containing the Instance that resides at AssetId on the web. This call will also yield the script until the model is returned. Script execution can still continue, however, if you use a <a href='http://wiki.roblox.com/index.php?title=Coroutine' target='_blank'>coroutine</a>.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function" id="InsertService.LoadAssetVersion"><div class="dump-function-signature"><a href="#InsertService.LoadAssetVersion" class="dump-class-member-name">LoadAssetVersion</a>(<div class="dump-function-argument">assetVersionId: <a href="#int64">int64</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Similar to LoadAsset, but instead an AssetVersionId is passed in, which refers to a particular version of the asset which is not neccessarily the latest version.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="InsertService.loadAsset"><div class="dump-function-signature"><a class="dump-class-member-name" href="#InsertService.loadAsset">loadAsset</a>(<div class="dump-function-argument">assetId: <a href="#int64">int64</a></div>) =&gt; <a href="#Instance">Instance</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>loadAsset</code> is deprecated. Use <code>LoadAsset</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div></div></div></div></div></body></html>

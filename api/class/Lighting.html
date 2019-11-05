@@ -1,0 +1,274 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Lighting</title></head><body><div class="dump-classes"><div class="dump-class" id="Lighting"><a href="#Lighting" class="dump-class-title">Lighting</a><p class="dump-class-inherits">Inherits: <a href="#Instance">Instance</a></p><p class="dump-class-tags">Tags: NotCreatable, Service</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>Responsible for all lighting aspects of the world (affects how things are rendered).</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="Lighting.Ambient" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.Ambient">Ambient</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The hue of the global lighting.  Changing this changes the color tint of all objects in the Workspace.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Lighting.Brightness" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.Brightness">Brightness</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>How much global light each Part in the Workspace receives. Standard range is 0 to 2 (0 being little light), but can be increased all the way to 10 (colors start to be appear very different at this value).</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.ClockTime"><div class="dump-class-property-signature"><a href="#Lighting.ClockTime" class="dump-class-member-name">ClockTime</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Lighting.ColorShift_Bottom" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Lighting.ColorShift_Bottom" class="dump-class-member-name">ColorShift_Bottom</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The hue of global lighting on the bottom surfaces of an object.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.ColorShift_Top"><div class="dump-class-property-signature"><a href="#Lighting.ColorShift_Top" class="dump-class-member-name">ColorShift_Top</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The hue of global lighting on the top surfaces of an object.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div id="Lighting.ExposureCompensation" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.ExposureCompensation">ExposureCompensation</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Exposure compensation amount. Applies a bias to the exposure level prior to the tonemap step. +1 indicates twice as much exposure and -1 means half as much exposure.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.FogColor"><div class="dump-class-property-signature"><a href="#Lighting.FogColor" class="dump-class-member-name">FogColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A Color3 value that changes the hue of distance fog.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Lighting.FogEnd" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Lighting.FogEnd" class="dump-class-member-name">FogEnd</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The distance at which fog completely blocks your vision. This distance is relative to the camera position. Units are in studs</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Lighting.FogStart" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.FogStart">FogStart</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The distance at which the fog gradient begins. This distance is relative to the camera position. Units are in studs.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.GeographicLatitude"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.GeographicLatitude">GeographicLatitude</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The latitude position the level is placed at.  This affects sun position. <a href='http://wiki.roblox.com/index.php/GeographicLatitude' target='_blank'>More info</a></p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.GlobalShadows"><div class="dump-class-property-signature"><a href="#Lighting.GlobalShadows" class="dump-class-member-name">GlobalShadows</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Flag enabling shadows from sun and moon in the place</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.LegacyOutlines"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.LegacyOutlines">LegacyOutlines</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div id="Lighting.OutdoorAmbient" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.OutdoorAmbient">OutdoorAmbient</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Effective ambient value for outdoors, effectively shadow color outdoors (requires GlobalShadows enabled)</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Lighting.Outlines"><div class="dump-class-property-signature"><a href="#Lighting.Outlines" class="dump-class-member-name">Outlines</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Flag enabling or disabling outlines on parts and terrain</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property dump-member-deprecated" id="Lighting.ShadowColor"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.ShadowColor">ShadowColor</a>: <a href="#Color3">Color3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Color the shadows appear as. Shadows are drawn mostly for characters, but depending on the lighting will also show for Parts in the Workspace.  Rendering settings can also affect if shadows are drawn.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.ShadowSoftness"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.ShadowSoftness">ShadowSoftness</a>: <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This property controls how blurry the shadows are.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.Technology"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.Technology">Technology</a>: <a href="#Technology">Technology</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="Lighting.TimeOfDay"><div class="dump-class-property-signature"><a class="dump-class-member-name" href="#Lighting.TimeOfDay">TimeOfDay</a>: <a href="#string">string</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>A string that represent the current time of day. Time is in 24-hour clock format &quot;XX::YY:ZZ&quot;, where X is hour, Y is minute, and Z is seconds.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Functions</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-function" id="Lighting.GetMinutesAfterMidnight"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.GetMinutesAfterMidnight">GetMinutesAfterMidnight</a>() =&gt; <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>The number of minutes that the current time is past midnight.  If currently at midnight, returns 0.  Will return decimal values if not at an exact minute.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Lighting.GetMoonDirection"><div class="dump-function-signature"><a href="#Lighting.GetMoonDirection" class="dump-class-member-name">GetMoonDirection</a>() =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns the lookVector (Vector3) of the moon. If this lookVector was used in a CFrame, the Part would face the moon.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Lighting.GetMoonPhase" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.GetMoonPhase">GetMoonPhase</a>() =&gt; <a href="#float">float</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Currently always returns 0.75. MoonPhase cannot be edited.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="Lighting.GetSunDirection" class="dump-class-member dump-class-function"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.GetSunDirection">GetSunDirection</a>() =&gt; <a href="#Vector3">Vector3</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Returns the lookVector (Vector3) of the sun. If this lookVector was used in a CFrame, the Part would face the sun.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function" id="Lighting.SetMinutesAfterMidnight"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.SetMinutesAfterMidnight">SetMinutesAfterMidnight</a>(<div class="dump-function-argument">minutes: <a href="#double">double</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Sets the time to be a certain number of minutes after midnight.  This works with integer and decimal values.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-function dump-member-deprecated" id="Lighting.getMinutesAfterMidnight"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.getMinutesAfterMidnight">getMinutesAfterMidnight</a>() =&gt; <a href="#double">double</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>getMinutesAfterMidnight</code> is deprecated. Use <code>GetMinutesAfterMidnight</code> instead.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: Dumpling Heuristics" class="dump-info"/></div></div></div><div id="Lighting.setMinutesAfterMidnight" class="dump-class-member dump-class-function dump-member-deprecated"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.setMinutesAfterMidnight">setMinutesAfterMidnight</a>(<div class="dump-function-argument">minutes: <a href="#double">double</a></div>) =&gt; <a href="#void">void</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><code>setMinutesAfterMidnight</code> is deprecated. Use <code>SetMinutesAfterMidnight</code> instead.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Heuristics"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div id="Lighting.LightingChanged" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#Lighting.LightingChanged">LightingChanged</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">skyboxChanged: <a href="#bool">bool</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired whenever a property of Lighting is changed, or a skybox is added or removed. Skyboxes are of type 'Sky' and should be parented directly to lighting.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div></div></div></div></div></body></html>

@@ -1,0 +1,259 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>GuiButton</title></head><body><div class="dump-classes"><div class="dump-class" id="GuiButton"><a class="dump-class-title" href="#GuiButton">GuiButton</a><p class="dump-class-inherits">Inherits: <a href="#GuiObject">GuiObject</a></p><p class="dump-class-tags">Tags: NotBrowsable, NotCreatable</p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>A GUI button containing an Image</p>
+</div><div class="dump-class-description-meta"></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-property" id="GuiButton.AutoButtonColor"><div class="dump-class-property-signature"><a href="#GuiButton.AutoButtonColor" class="dump-class-member-name">AutoButtonColor</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Determines whether a button changes color automatically when reacting to mouse events.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiButton.Modal"><div class="dump-class-property-signature"><a href="#GuiButton.Modal" class="dump-class-member-name">Modal</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Allows the mouse to be free in first person mode. If a button with this property set to true is visible, the mouse is 'free' in first person mode.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-property" id="GuiButton.Selected"><div class="dump-class-property-signature"><a href="#GuiButton.Selected" class="dump-class-member-name">Selected</a>: <a href="#bool">bool</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-property" id="GuiButton.Style"><div class="dump-class-property-signature"><a href="#GuiButton.Style" class="dump-class-member-name">Style</a>: <a href="#ButtonStyle">ButtonStyle</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Determines how a button will look, including mouse event states. Uses Enum.ButtonStyle. <a href='http://wiki.roblox.com/index.php?title=API:Class/GuiButton/Style' target='_blank'>More info</a></p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Events</div><div class="dump-class-member-section-list"><div class="dump-class-member dump-class-event" id="GuiButton.Activated"><div class="dump-function-signature"><a href="#GuiButton.Activated" class="dump-class-member-name">Activated</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">inputObject: <a href="#Instance">Instance</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p><em>No description available.</em></p>
+</div><div class="dump-class-member-meta"></div></div></div><div class="dump-class-member dump-class-event" id="GuiButton.MouseButton1Click"><div class="dump-function-signature"><a href="#GuiButton.MouseButton1Click" class="dump-class-member-name">MouseButton1Click</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse is over the button, and the mouse down and up events fire without the mouse leaving the button.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiButton.MouseButton1Down"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiButton.MouseButton1Down">MouseButton1Down</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse button is pushed down on a button.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div id="GuiButton.MouseButton1Up" class="dump-class-member dump-class-event"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiButton.MouseButton1Up">MouseButton1Up</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Fired when the mouse button is released on a button.</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiButton.MouseButton2Click"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiButton.MouseButton2Click">MouseButton2Click</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>()</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This function currently does not work :(</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiButton.MouseButton2Down"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiButton.MouseButton2Down">MouseButton2Down</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This function currently does not work :(</p>
+</div><div class="dump-class-member-meta"><span title="Content source: ReflectionMetadata.xml" class="dump-info"/></div></div></div><div class="dump-class-member dump-class-event" id="GuiButton.MouseButton2Up"><div class="dump-function-signature"><a class="dump-class-member-name" href="#GuiButton.MouseButton2Up">MouseButton2Up</a>: <a href="#RBXScriptSignal">RBXScriptSignal</a>(<div class="dump-function-argument">x: <a href="#int">int</a>,</div><div class="dump-function-argument">y: <a href="#int">int</a></div>)</div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>This function currently does not work :(</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: ReflectionMetadata.xml"/></div></div></div></div></div></div></div></body></html>

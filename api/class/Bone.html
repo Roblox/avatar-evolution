@@ -1,0 +1,268 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport"/><style>* {
+	box-sizing: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: sans-serif;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 18px;
+	line-height: 1.4;
+	overflow: auto;
+	background: #fefefe;
+}
+
+a, a:visited {
+	color: #0085d6;
+	text-decoration: none;
+	position: relative;
+}
+
+.dump-info {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 2px;
+	font-size: 0.875rem;
+	width: 1.2em;
+	height: 1.2em;
+	background: rgba(0, 133, 214, 0.5)
+}
+
+.dump-info:hover {
+	background: #0085d6;
+}
+
+.dump-info::before {
+	content: "i";
+	color: #fff;
+	font-family: serif;
+	font-weight: bold;
+}
+
+.dump-classes {
+	width: 100%;
+	max-width: 48rem;
+	margin: 0 auto;
+	font-size: 0.875rem;
+}
+
+.dump-class {
+	margin-top: 2em;
+	margin-bottom: 3em;
+}
+
+.dump-class-title {
+	display: block;
+	font-size: 1.75rem;
+	font-weight: bold;
+	margin: 0.5rem;
+	margin-bottom: 0.25em;
+	width: 100%;
+}
+
+.dump-class-subtitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding-left: 0.5rem;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-member-subtitle {
+	font-size: 1.1rem;
+	font-weight: bold;
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.dump-class-tags,
+.dump-class-inherits {
+	font-style: italic;
+	margin: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.dump-class-description {
+	display: flex;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+
+.dump-class-description-text {
+	flex: 1 0;
+}
+
+.dump-class-description-meta {
+	flex: 0 0 auto;
+	position: absolute;
+	top: 0;
+	left: -1.5rem;
+}
+
+.dump-class-member-section {
+	margin-top: 0.5rem;
+}
+
+.dump-class-member {
+	padding: 0.5rem;
+	position: relative;
+	overflow: visible;
+}
+
+.dump-class-member-meta {
+	position: absolute;
+	top: 0;
+	left: -2rem;
+	height: 100%;
+	width: 2rem;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	padding-top: 0.5rem;
+	overflow: visible;
+}
+
+.dump-class-member-meta:empty {
+	display: none;
+}
+
+.dump-class-member-name {
+	font-weight: bold;
+	font-family: monospace;
+}
+
+.dump-class-member-description {
+	display: flex;
+	margin-top: .75rem;
+	overflow: visible;
+}
+
+.dump-class-member-description-text {
+	flex: 1 0;
+	padding-right: 1rem;
+}
+
+.dump-class-member-description-meta {
+	flex: 0 0 auto;
+}
+
+.dump-class-property-signature {
+	font-family: monospace;
+}
+
+.dump-function-signature {
+	margin-bottom: 0.25rem;
+	background: rgba(0, 133, 214, 0.1);
+	border-radius: 3px;
+	padding: 0.5rem;
+	font-family: monospace;
+}
+
+.dump-function-argument {
+	margin-left: 2rem;
+	font-family: monospace;
+}
+
+.markdown h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h2 {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown h3 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	margin-top: 0.75rem;
+}
+
+.markdown strong {
+	font-weight: bold;
+}
+
+.markdown em {
+	font-style: italic;
+}
+
+.markdown code {
+	font-family: monospace;
+}
+
+.markdown :not(pre) code, .markdown pre {
+	background-color: rgba(0, 0, 0, 0.07);
+	padding: 0.05em 0.25em;
+	border: 1px solid rgba(0, 0, 0, 0.10);
+	border-radius: 0.25em;
+}
+
+.markdown pre {
+	padding-left: 0.5em;
+}
+
+.markdown p, .markdown pre, .markdown ul, .markdown table {
+	margin-bottom: 0.75em;
+}
+
+.markdown ul {
+	padding-left: 2em;
+}
+
+table td, table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+table {
+    border-spacing: 0;
+	border-collapse: collapse;
+	min-width: 100%;
+	margin-bottom: 0.75em;
+}
+
+table th {
+    padding: 6px 13px;
+	border: 1px solid #dfe2e5;
+	text-align: left;
+}
+
+table td {
+	vertical-align: text-top;
+}</style><title>Bone</title></head><body><div class="dump-classes"><div class="dump-class" id="Bone"><a class="dump-class-title" href="#Bone">Bone</a><p class="dump-class-inherits">Inherits: <a href="#Attachment">Attachment</a></p><div class="dump-class-description"><div class="dump-class-description-text markdown"><p>Bones are used to define and animate the positions of visual-only bones within a skinned mesh part.</p>
+<p>Bone extends <a href="Attachment" title="Attachment">Attachment</a>. The inherited <a href="Attachment#CFrame" title="Attachment.CFrame">CFrame</a> property is used as the reference position of the Bone. The inherited <a href="Attachment#WorldCFrame" title="Attachment.WorldCFrame">WorldCFrame</a> and the other <code>World...</code> properties will continue to return the initial un-transformed position.</p>
+<p>Unlike <a href="Attachment" title="Attachment">Attachments</a>, Bones can be children of other Bones in addition to <a href="BasePart" title="BasePart">Parts</a>. When parented to another Bone the child bone's world position will be relative to the parent Bone's position. Bones form an explicit hierarchy.</p>
+<p>To support animation Bones have a <a href="Bone#Transform" title="Bone.Transform">Transform</a> property that functions similarly to <a href="Motor6D#Transform" title="Motor6D.Transform">Motor6D.Transform</a>. It is not replicated or serialized and is meant to be driven by animation as an offset from the reference pose.</p>
+<p>The movement of Bones can affect the appearance of parts, but does not change the shape of the part physically for collision detection.</p>
+<p>Bones internally implement the animatable joint interface and can be driven by <a href="Animator" title="Animator">Animators</a> interchangeably with <a href="Motor6D" title="Motor6D">Motor6Ds</a>. Animation data authored for a tree of motors can be played as-is on an equivalent tree of bones and vice versa.</p>
+<p>For a Motor6D the child part is relative to:</p>
+<pre><code class="language-lua">Transform * ParentPart.CFrame * CParent
+</code></pre>
+<p>For a Bone all child Bones are relative to:</p>
+<pre><code class="language-lua">Transform * ParentPart.CFrame * Bone.CFrame
+</code></pre>
+<p>Physical <a href="Constraint" title="Constraint">Constraints</a> directly attached to Bones will use the transformed positions for simulation.</p>
+<h2>Skinning</h2>
+<p>Bones exist primarily in service to our new skeletal skinning. Many bones, like bones in a character's face, hands, or corrective &quot;twist joints&quot; in limbs may not need physical representation because they are only meant for small, but expressive, movements.</p>
+<p>Our new mesh importer supports importing meshes with skeletal joint data with vertices weighted to those joints. This will be saved in the mesh asset data for each part.</p>
+<p>Named joints defined within a <a href="MeshPart" title="MeshPart">MeshPart</a> or <a href="FileMesh" title="FileMesh">FileMesh</a>'s mesh asset data will skin to Bones with the same <a href="Instance#Name" title="Instance.Name">name</a> found as children of that part, Bones that are direct children of those Bones (recursively), or children of other parts in the same Model that are connected to the part directly or indirectly by <a href="Motor6D" title="Motor6D">Motor6D</a>s, <a href="Weld" title="Weld">Weld</a>s, <a href="BallSocketConstraint" title="BallSocketConstraint">BallSocketConstraint</a>s, <a href="HingeConstraint" title="HingeConstraint">HingeConstraint</a>s, or other skinning-enabled joints within the same <a href="Model" title="Model">Model</a>. Other descendant <a href="Model" title="Model">Model</a>s are considered separate models.</p>
+<p>In the absence of Bones, skinning will skin mesh joints relative to a connected <a href="MeshPart" title="MeshPart">MeshPart</a> or <a href="FileMesh" title="FileMesh">FileMesh</a>'s parent part with the same instance name as the mesh joint using the offset defined by the that part's mesh asset joint data as if it contained a Bone instance with the same name.</p>
+<p>Skinning is based on joint connections so that classic dismemberment on death works as expected. The &quot;within the same Model&quot; rule prevents characters that are welded together from unexpectedly skinning together as a singular amalgam visual entity.</p>
+</div><div class="dump-class-description-meta"><span class="dump-info" title="Content source: Dumpling Supplemental"/></div></div><div class="dump-class-member-section"><div class="dump-class-subtitle">Properties</div><div class="dump-class-member-section-list"><div id="Bone.Transform" class="dump-class-member dump-class-property"><div class="dump-class-property-signature"><a href="#Bone.Transform" class="dump-class-member-name">Transform</a>: <a href="#CFrame">CFrame</a></div><div class="dump-class-member-description"><div class="dump-class-member-description-text markdown"><p>Functions similarly to <a href="Motor6D#Transform" title="Motor6D.Transform">Motor6D.Transform</a> and can be animated by <a href="Animator" title="Animator">Animator</a>s. Not replicated or serialized. Meant to be driven by animation as an offset from the reference pose.</p>
+<p>The final position of a bone for rendering and simulation will be <code>Transform * WorldCFrame</code>.</p>
+</div><div class="dump-class-member-meta"><span class="dump-info" title="Content source: Dumpling Supplemental"/></div></div></div></div></div></div></div></body></html>
