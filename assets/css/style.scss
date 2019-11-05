@@ -4,9 +4,18 @@
 @import "{{ site.theme }}";
 
 .page-header {
-  // background-image: url("/images/banner.jpg");
-  background-image: linear-gradient(120deg, #000, #000);
+  background-image: url("/images/banner.jpg");
+  background-color: #000;
 }
+
+.project-tagline {
+  opacity: 1.0;
+}
+
+.site-footer {
+  display: none;
+}
+
 
 body {
   font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
