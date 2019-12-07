@@ -5,10 +5,11 @@ title: Avatar Evolution
 
 Avatar Evolution represents a massive cross-team effort working on prototyping and building a suite of new technology to enable developers to create next-generation games and avatars on Roblox:
 
-- "Mesh deformation" through skeletal skinning
+- Skeletal skinning a.k.a. "Mesh deformation"
+- Custom PBR surface appearances
 - New physics components for more stable and realistic characters
-- Improved mesh and animation importers.
-- And more exciting features, coming soon!
+- Improved mesh and animation importers
+- And more exciting features coming soon!
 
 Even though it's still early and these features are in varying stages of pre-release development we're releasing a special beta build of Roblox Studio where you can try them today.
 
@@ -21,6 +22,7 @@ Let us know what you think! We're putting this build out in an early state to ge
 This prototype build of Roblox Studio includes:
 
 - Skeletal skinning with `MeshParts` and `Bones`
+- Custom `SurfaceAppearances` for Parts
 - Improved mesh and animation importers
 - New physics instances used by the new character controller suite
 
@@ -31,7 +33,9 @@ You can download it here:
 
 This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build  &mdash; don’t run directly from .zip.
 
-If you find issues with new features in this build please [report them on GitHub](https://github.com/Roblox/avatar-evolution/issues).
+Use of this build is subject to a [limited use licence](limited-terms-of-use).
+
+If you find issues with new features in this build please [report them on GitHub](https://github.com/Roblox/avatar-evolution/issues). We really want your feedback!
 
 **Warning:** Don't use this build to edit published places or anything you're not ready to lose! This build includes support for several new APIs that aren't supported in live games or team create. We may add/remove/rename any of these new classes before release. **Data loss may occur!**
 
@@ -67,3 +71,19 @@ And new functionality for several existing types:
 - [Animator](api/class/Animator) &mdash; support for animating Bones
 
 **Warning:** These new types aren't supported on production and may change dramatically before release. Don't use them in places or models used in a live game! Production servers and clients don't know these new Instances exist. They won't work in Team Create either!
+
+## API Stability Status
+
+Unlike production APIs, these new APIs are subject to change dramatically between builds. Many of them are incomplete or otherwise don't yet match our internal specifications.
+
+**Stable:** Subject to change but mostly matches spec.
+
+- Bone
+- MeshPart
+- SurfaceAppearance
+
+**Unstable:**
+
+- CharacterHelper &mdash; Unstable. Plan change it to use parent part instead of model root, rename to "CharacterSensor"
+- LevitationConstraint &mdash; Very unstable. Physical response is good, but not happy with surfacing it as a Constraint instance. Plan to build in some kind of ground sensor region instead of relying on external raycasts.
+- LinearVelocity &mdash; Incomplete.
