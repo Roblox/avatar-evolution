@@ -28,8 +28,8 @@ This prototype build of Roblox Studio includes:
 
 You can download it here:
 
-- [Download Windows build](https://github.com/Roblox/avatar-evolution/releases/download/v0.413.0.369835/avatar-evolution-0.413.0.369835-windows-x64.zip) (.zip, 179 MB)
-- [Download macOS build](https://github.com/Roblox/avatar-evolution/releases/download/v0.413.0.369835/avatar-evolution-0.413.0.369835-macos.zip) (.zip, 176 MB)
+- [Download Windows build](https://github.com/Roblox/avatar-evolution/releases/download/v0.413.0.370037/avatar-evolution-0.413.0.370037-windows-x64.zip) (.zip, 178 MB)
+- [Download macOS build](https://github.com/Roblox/avatar-evolution/releases/download/v0.413.0.370037/avatar-evolution-0.413.0.370037-macos.zip) (.zip, 176 MB)
 
 This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build  &mdash; don’t run directly from .zip.
 
