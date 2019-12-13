@@ -45,9 +45,9 @@ We're working on a new componentized character controller suite written from scr
 
 The intent is to eventually replace Humanoids as the default controller, with existing games left as-is with the option to opt-in.
 
-- [Download a demo place file including the new controller]() (.rbxl)
+- [Download a demo place file including the new controller](files/TestPlace.rbxlx) (.rbxl)
 
-You can find [documentation for the new controller here]().
+You can find [documentation for the new controller here](files/AvatarComponents.pdf). (.pdf)
 
 # New Mesh and Animation importer
 
