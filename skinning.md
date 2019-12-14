@@ -5,13 +5,13 @@ title: Skinning
 
 # Skinning
 
-The Avatar Evolution beta build provides support for skinned meshes weighted to up to 4 joints. Linear skinning is used.
+The Avatar Evolution beta build provides support for skinned meshes using linear skeletal skinning, with each vertex weighted to up to 4 joints.
 
-There is no new part type for skinned mesh. Existing MeshParts, SpecialMeshes orFileMeshes can be used. If the mesh part id references a mesh with skinning data then the mesh will appear skinned provided there are Bones or other skinned parts to skin to.
+There is no new part type for skinned meshes. Existing MeshParts, SpecialMeshes or FileMeshes can be used. If the mesh part id references a mesh with skinning data then the mesh will appear skinned provided there are Bones or other skinned parts to skin to.
 
 See the "Skinning Rules" section below on rules on how a mesh determines which Bones and/or MeshParts to skin to.
 
-There is a new Instance type, [Bone][api/class/Bone], which can be put under mesh parts to animate them. These need to be named to match the joint names in the mesh.
+There is a new Instance type, [Bone](api/class/Bone), which can be put under mesh parts to animate them. These need to be named to match the joint names in the mesh.
 
 There is no change to the animation format. Existing animations can be played on Bones provided they are oriented to match the equivalent Motors.
 
@@ -62,9 +62,9 @@ Import through the properties panel on a part works, but will not create any `Bo
 
 Our new mesh importer supports importing meshes with skeletal joint data with vertices weighted to those joints. This will be saved in the mesh asset data for each part.
 
-Named joints defined within a [MeshPart][api/class/MeshPart] or [FileMesh][api/class/FileMesh]'s mesh asset data will skin to [Bones][api/class/Bone] with the same [name][api/class/Instance#Name] found as children of that part, Bones that are direct children of those Bones (recursively), or children of other parts in the same Model that are connected to the part directly or indirectly by [Motor6D][api/class/Motor6D]s, [Weld][api/class/Weld]s, [BallSocketConstraint][api/class/BallSocketConstraint]s, [HingeConstraint][api/class/HingeConstraint]s, or other skinning-enabled joints within the same [Model][api/class/Model]. Other descendant [Model][api/class/Model]s are considered separate models.
+Named joints defined within a [MeshPart](api/class/MeshPart) or [FileMesh](api/class/FileMesh)'s mesh asset data will skin to [Bones](api/class/Bone) with the same [name](api/class/Instance#Name) found as children of that part, Bones that are direct children of those Bones (recursively), or children of other parts in the same Model that are connected to the part directly or indirectly by [Motor6D](api/class/Motor6D)s, [Weld](api/class/Weld)s, [BallSocketConstraint](api/class/BallSocketConstraint)s, [HingeConstraint](api/class/HingeConstraint)s, or other skinning-enabled joints within the same [Model](api/class/Model). Other descendant [Model](api/class/Model)s are considered separate models.
 
-In the absence of Bones, skinning will skin mesh joints relative to a connected [MeshPart][api/class/MeshPart] or [FileMesh][api/class/FileMesh]'s parent part with the same instance name as the mesh joint using the offset defined by the that part's mesh asset joint data as if it contained a Bone instance with the same name.
+In the absence of Bones, skinning will skin mesh joints relative to a connected [MeshPart](api/class/MeshPart) or [FileMesh](api/class/FileMesh)'s parent part with the same instance name as the mesh joint using the offset defined by the that part's mesh asset joint data as if it contained a Bone instance with the same name.
 
 Skinning is based on joint connections so that classic dismemberment on death works as expected. The "within the same Model" rule prevents characters that are welded together from unexpectedly skinning together as a singular amalgam visual entity.
 
