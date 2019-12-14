@@ -63,6 +63,7 @@ This beta build includes several new classes.
 - [CharacterHelper](api/class/CharacterHelper)
 - [LevitationConstraint](api/class/LevitationConstraint)
 - [LinearVelocity](api/class/LinearVelocity)
+- [SurfaceAppearance](api/class/SurfaceAppearance)
 
 And new functionality for several existing types:
 
