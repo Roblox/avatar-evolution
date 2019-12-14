@@ -32,11 +32,15 @@ There are several general possibilities:
    Build the character as you would for R15 but skin the mesh to the joints in the authoring package.
    Use the 'Rthro', 'Rthro Slender' or 'R15' import setting. This will create a Humanoid based character that is backwards compatible with R15.
 
+   See this [S15_Lola.fbx](files/S15_Lola.fbx) as an example.
+
 2. **S1** &mdash; R15 animation compatible, 1 MeshPart.
 
    Makes sure you have the standard 15 joints named as per R15, except 'HumanoidRootNode' should be named 'HumandoidRootPart'. Skin these to a single mesh.
 
    Use the 'Custom' import setting. This will create a Model that can be used to play current catalog R15 animations but on a single mesh.
+
+   See this [S1_Lola.fbx](files/S1_Lola.fbx) as an example.
 
    Using one of the 'Rthro', 'Rthro Slender' or 'R15' import settings will create a Humanoid rig that can be used as a starter character, provided a few changes are made:
 
@@ -78,7 +82,7 @@ To avoid these issues, it is best to have the joints unscaled at the time of bin
 
 A common practice is to zero (or make identity) the joint transforms before binding the mesh.
 
-You can still achieve squash and stretch effects using translation. See the translation.rbxl example. Use the AnimationEditor to play the simple animation.
+You can still achieve squash and stretch effects using translation. See this [translation.rbxl](files/translation.rbxl) example. Use the AnimationEditor to play the simple animation.
 
 MeshParts that have skinned mesh may be scaled. If you do this with the scale widget in Studio any descendant Bone instances will have their position updated appropriately to preserve the mesh shape.
 
