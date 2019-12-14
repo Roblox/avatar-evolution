@@ -53,7 +53,7 @@ You can find [documentation for the new controller here](files/AvatarComponents.
 
 We've spent a lot of time rewriting the internals of the mesh and animation importer to make it more reliable and consistent. The importer also now supports importing meshes with skinning information.
 
-Read about [how to import skinned meshes here]().
+Read about [how to import skinned meshes here](skinning).
 
 # New API
 
