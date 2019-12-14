@@ -55,6 +55,16 @@ We've spent a lot of time rewriting the internals of the mesh and animation impo
 
 Read about [how to import skinned meshes here](skinning).
 
+# New Physically Based Rendering and Textures
+
+We've upgraded our rendering engine to support more realistic looking material surface. We've added a [SurfaceAppearance](api/class/SurfaceAppearance) Instance to allow custom inputs to this system, including:
+
+- Normal maps
+- Metalness textures
+- Roughness textures
+
+Read more about [how to use PBR and SurfaceAppearance here](surface-appearance).
+
 # New API
 
 This beta build includes several new classes.
