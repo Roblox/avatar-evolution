@@ -76,7 +76,7 @@ Skinning is based on joint connections so that classic dismemberment on death wo
 
 We don't currently support scale in animation data.
 
-If there is any difference in the scale values on the joints between the skin bind pose (joints when the mesh was skinned) and the current (and or) animated joint scales then the mesh may not be correctly scaled.
+Check the joint scale values in your DCC tool. If there is any difference in the scale values on the joints between the skin bind pose (joints when the mesh was skinned) and the current (and or) animated joint scales then the mesh may not be correctly scaled.
 
 To avoid these issues, it is best to have the joints unscaled at the time of binding, and not to use scale when posing or animating. In short, don't scale the joints in the authoring program.
 
