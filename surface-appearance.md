@@ -8,7 +8,7 @@ title: PBR and SurfaceAppearance
 We've made significant upgrades to our rendering engine to support more realistic looking materials. The most significant change here is Image Based Lighting - lighting on surfaces that reflects (an approximation) of the surface's surrounding. To get the most out of our rendering upgrades, take these steps:
 
 1. Set Lighting.Ambient and Lighting.OutdoorAmbient to 0,0,0. This will disable constant ambient lighting. Constant ambient lighting can be used to add artificial light for specific art styles or to prevent closed areas from becoming pitch black, but in realistic environments, all "ambient" light that hits an object comes from the object's environment.
-2. Set Lighting.EnvironmentDiffuseScale = 1, Lighting.EnvironmentSpecularScale = 1. This will cause objects to reflect light from their environments. We currently use the skybox as an approximation for the environment lighting.
+2. Set Lighting.EnvironmentDiffuseScale = 1, Lighting.EnvironmentSpecularScale = 1. This will cause objects to reflect light from their environments. We currently use the skybox as an approximation for the environment lighting. **Note:** [there is a bug](https://github.com/Roblox/avatar-evolution/issues/3) where these properties do not show up in the Properties window. They are still accessible through the Command Bar.
 3. Insert a better [Sky](api/class/Sky). We've observed that skyboxes with a dark bottom hemisphere tend to produce better looking reflections in our current system. The default skybox doesn't look great, partly for this reason.
 
 Here is an example scene before enabling IBL:
