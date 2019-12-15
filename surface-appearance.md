@@ -42,7 +42,7 @@ The normal map affects the apparent shape of the surface. You can read more abou
 
 ## Metalness
 
-Many physical properties affect how materials reflect light, but one of the most significant properties is whether the material is a metal or a non-metal. Metals characteristically have high reflectance and low diffuse. Metals also have tinted reflections.
+Many physical properties affect how materials reflect light, but one of the most significant properties is whether the material is a metal or a non-metal. Metals characteristically have high reflectance and low diffuse. Metals also have tinted reflections. When EnvironmentSpecularScale = 0, metal shading is disabled; metal surfaces will appear the same as plastic.
 
 ![metal](images/mechy_metalness.png)
 
