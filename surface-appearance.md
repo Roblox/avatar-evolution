@@ -44,7 +44,7 @@ The normal map affects the apparent shape of the surface. You can read more abou
 
 Many physical properties affect how materials reflect light, but one of the most significant properties is whether the material is a metal or a non-metal. Metals characteristically have high reflectance and low diffuse. Metals also have tinted reflections.
 
-![metal](images/mechy_metal.png)
+![metal](images/mechy_metalness.png)
 
 The metalness map is a grayscale map in which black pixels represent non-metals and white pixels represent metals. Gray pixels can be used to represent metals partially covered with dirt, rust, grime, etc.
 
