@@ -31,7 +31,10 @@ You can download it here:
 - [Download Windows build](https://github.com/Roblox/avatar-evolution/releases/download/v0.413.0.370378/avatar-evolution-0.413.0.370378-windows-x64.zip) (.zip, 179 MB)
 - [Download macOS build](https://github.com/Roblox/avatar-evolution/releases/download/v0.413.0.370378/avatar-evolution-0.413.0.370378-macos.zip) (.zip, 176 MB)
 
-This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build  &mdash; don’t run directly from .zip.
+This is a custom build of Roblox Studio. Make sure to extract the .zip to your computer before running the build  &mdash; don’t run directly from .zip.
+
+- On **Windows**: Extract zip to a new folder, open that folder, run **RobloxStudioBeta.exe**
+- On **macOS**: Extract zip, run the extracted **RobloxStudio.app**
 
 Use of this build is subject to a [limited use licence](limited-terms-of-use).
 
