@@ -57,7 +57,7 @@ Read about [how to import skinned meshes here](skinning).
 
 # New Physically Based Rendering and Textures
 
-We've upgraded our rendering engine to support more realistic looking material surface. We've added a [SurfaceAppearance](api/class/SurfaceAppearance) Instance to allow custom inputs to this system, including:
+We've upgraded our rendering engine to support more realistic looking surfaces. We've added a [SurfaceAppearance](api/class/SurfaceAppearance) Instance to allow custom inputs to this system, including:
 
 - Normal maps
 - Metalness textures
