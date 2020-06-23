@@ -1,0 +1,6 @@
+filters:
+  - true
+commentBody: |
+  Thank you for your contribution! Unfortunately this repository does not accept 
+  contributions from the community and we will be closing your pull request.
+addLable: false
