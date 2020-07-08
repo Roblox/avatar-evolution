@@ -3,6 +3,8 @@ layout: default
 title: Avatar Evolution
 ---
 
+## Avatar Evolution is no longer actively maintained. Most of these features will soon be available in standard Roblox Studio.
+
 Avatar Evolution represents a massive cross-team effort working on prototyping and building a suite of new technology to enable developers to create next-generation games and avatars on Roblox:
 
 - Skeletal skinning a.k.a. "Mesh deformation"
