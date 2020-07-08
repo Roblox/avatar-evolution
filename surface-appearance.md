@@ -1,59 +1,68 @@
 ---
 layout: default
-title: PBR and SurfaceAppearance
+title: SurfaceAppearance
 ---
 
-# Physically Based Rendering
+# SurfaceAppearance 
 
-We've made significant upgrades to our rendering engine to support more realistic looking materials. The most significant change here is Image Based Lighting - lighting on surfaces that reflects (an approximation) of the surface's surrounding. To get the most out of our rendering upgrades, take these steps:
+SurfaceAppearance objects allow you to override the appearance of a MeshPart with advanced graphics options. Most notably, a SurfaceAppearance can apply a set of PBR textures to a mesh.
 
-1. Set Lighting.Ambient and Lighting.OutdoorAmbient to 0,0,0. This will disable constant ambient lighting. Constant ambient lighting can be used to add artificial light for specific art styles or to prevent closed areas from becoming pitch black, but in realistic environments, all "ambient" light that hits an object comes from the object's environment.
-2. Set Lighting.EnvironmentDiffuseScale = 1, Lighting.EnvironmentSpecularScale = 1. This will cause objects to reflect light from their environments. We currently use the skybox as an approximation for the environment lighting. **Note:** [there is a bug](https://github.com/Roblox/avatar-evolution/issues/3) where these properties do not show up in the Properties window. They are still accessible through the Command Bar.
-3. Insert a better [Sky](api/class/Sky). We've observed that skyboxes with a dark bottom hemisphere tend to produce better looking reflections in our current system. The default skybox doesn't look great, partly for this reason.
+PBR is short for Physically Based Rendering, which refers to a common texture format for defining extra physical details in games. Because this format is widely used, it’s easy to take meshes and textures made in 3rd party editing software and import them into Roblox. It’s also easy to find PBR format content from various 3rd party stores such as [SketchFab](https://sketchfab.com/search?q=pbr+object&sort_by=-relevance&type=models), [TurboSquid](https://www.turbosquid.com/Search/3D-Models/free/pbr), [CGTrader](http://cgtrader.com/pbr-3d-models?polygons=lt_5k).
 
-Here is an example scene before enabling IBL:
-![before](images/scene-no-ibl.JPG)
+Here is a mesh with PBR textures [found on Turbosquid](https://www.turbosquid.com/3d-models/3d-model-fantasy-sword---ready/1119210) imported into Roblox.
+![Fantasy Sword](images/meshpart-vs-sa.png)
 
-And after:
-![after](images/scene-ibl.JPG)
+SurfaceAppearance’s AlphaMode property can also be to improve the look of partially transparent textures on MeshParts by fixing various sorting issues.
+![Fantasy Sword](images/pinetrees.png)
 
-# SurfaceAppearance
+How a MeshPart with a SurfaceAppearance looks to users depends on their device and their graphics quality level. You may want to preview your content with different quality level settings.
 
-[SurfaceAppearance](api/class/SurfaceAppearance) is an Instance that allows custom normal, metalness, and roughness textures to be fed into the PBR system.
+Note: Most SurfaceAppearance properties cannot be modified by scripts in-game. This is because the Roblox engine needs to do some pre-processing to display a SurfaceAppearance, and this is usually too expensive to perform in-game.
 
-[Mechy.rbxm](files/Mechy.rbxm) is an example character that uses SurfaceAppearances for scratched paint with varying roughness on top of metal armor. You can download the [source FBX file here](files/S15_Mechy.fbx).
+## Properties
 
-![mechy](images/mechy-surface-appearance.JPG)
+### AlphaMode
+Determines how the alpha channel of the ColorMap of a SurfaceAppearance is used.
 
-Mechy happens to use a single set of textures for the whole body, but it is possible to use different textures for each SurfaceAppearance if desired.
+When SurfaceAppearance.AlphaMode is set to Transparency and the MeshPart.Transparency is set to 0, opaque pixels in the SurfaceAppearance’s ColorMap will render as completely opaque in the 3D scene. This solves various problems for textures with different transparent and opaque areas, such as foliage. When parts of the surface are fully opaque, the Roblox engine can render them with proper depth-based occlusion. Opaque surfaces also generally work better with depth-based effects like DepthOfField, glass and water refraction, and water reflection.
+MeshPart.TextureId vs SurfaceAppearance:
+![Leaves Comparison](images/leaves-comparison.gif)
 
-## Color
+Here is an example of a fern color map. Only the pixels on the leaves have full alpha.
+![Fern ColorMap](images/fern-color.png)
+**Overlay** - Overlays the SurfaceAppearance.ColorMap on top of the underlying part color based on the ColorMap’s alpha channel.
+![Overlay](images/fern-overlay.png)
+**Transparency** - Renders only the ColorMap using the alpha channel for transparency. Areas of the surface where alpha is 0 will appear completely see-through whereas areas where the alpha is 1 will be completely opaque.
+![Transparency](images/fern-cutout.png)
 
-![color](images/mechy_color.png)
+### ColorMap
+Determines the color and opacity of the surface. This texture is sometimes called the albedo texture. The alpha channel of this texture controls its opacity, which behaves differently based on the AlphaMode setting.
 
-The color map defines the color of the surface. This performs the same function as [MeshPart.TextureId](api/class/MeshPart).
+### NormalMap
 
-## Normals
+Modifies the lighting of the surface by adding bumps, dents, cracks, and curves without adding more polygons.
 
-![normal](images/mechy_normal.png)
+Normal maps are RGB images that modify the surface’s normal vector used for lighting calculations. The R, G, and B channels of the NormalMap correspond to the X, Y, and Z components of the local surface vector respectively, and byte values of 0 and 255 for each channel correspond linearly to normal vector components of -1 and 1.016 respectively. This range is stretched slightly from -1 to 1 so that a byte value of 127 maps to exactly 0. The normal vector’s Z axis is always defined as the direction of the underlying mesh’s normal. A uniform (127,127,255) image translates to a completely flat normal map where the normal is everywhere perpendicular to the mesh surface. This format is called “tangent space” normal maps. Roblox does not support world space or object space normal maps.
 
-The normal map affects the apparent shape of the surface. You can read more about normal maps [here](https://en.wikipedia.org/wiki/Normal_mapping).
-**Note:** When exporting a mesh from 3rd Party software, you must make sure that the equivalent "Export Tangents" setting is enabled. Roblox currently needs tangent data in the mesh file in order to display normal maps.
+Incorrectly flipped normal components can make bumps appear like indents. If you import a normal map and notice the lighting looks off, you may need to invert the  G channel of the image. The X and Y axes of the tangent space frame correspond to the X and Y directions in the image after it’s transformed by the mesh UVs. If you view your normal map in an image editor as if it were displayed on a surface, normals pointing towards the right side of the screen should appear more red, and normals pointing towards the top side of your screen should appear more green.
+![Example Normal Map](images/bread-nmap.png)
 
-## Metalness
+The terms “DirectX format” and “OpenGL format” are sometimes used to describe whether the G channel of the normal map is inverted or not. Roblox expects the OpenGL format.
 
-Many physical properties affect how materials reflect light, but one of the most significant properties is whether the material is a metal or a non-metal. Metals characteristically have high reflectance and low diffuse. Metals also have tinted reflections. When EnvironmentSpecularScale = 0, metal shading is disabled; metal surfaces will appear the same as plastic.
+Note: Roblox expects imported meshes to include tangents. Modeling software may also refer to this as “tangent space” information. If you apply a normal map and it does not seem to make any visual difference, you may need to re-export your mesh along with its tangent information from modeling software.
 
-![metal](images/mechy_metalness.png)
+### MetalnessMap
+Determines which parts of the surface are metal and are non-metal. A metalness map is a grayscale image where black pixels correspond to non-metals and white pixels correspond to metals.
 
-The metalness map is a grayscale map in which black pixels represent non-metals and white pixels represent metals. Gray pixels can be used to represent metals partially covered with dirt, rust, grime, etc.
+Metals only reflect light the same color as the metal, and they reflect much more light than non-metals. Most materials in the real world can be categorized either metals or non-metals. For this reason, most pixels in a metalness map will be either pure black or pure white. Values in between are typically used to simulate dirt or grunge on top of an underlying metal area.
 
-## Roughness
+Here’s an example of a piece of metal with a layer of paint on top. Most paints are non-metallic, so the metalness map is black everywhere except on unpainted metal parts and spots where the paint has chipped away and the underlying metal is visible.
+![Jetpack](images/jetpack.gif)
+![Jetpack Metalness Map](images/metalness-explained.png)
 
-![roughness](images/mechy_roughness.png)
+Note: When Lighting.EnvironmentSpecularScale is 0, metalness has no effect. For the most realistic reflections, setting EnvironmentSpecularScale and EnvironmentDiffuseScale to 1, and Ambient and OutdoorAmbient to (0,0,0) is recommended.
 
-The roughness map determines how much microsurface variation there is at a given pixel. Black pixels indicate 0% roughness - the microsurface is smooth, resulting in clear reflections and bright, concentrated specular highlights. White pixels indicate 100% roughness - the microsurface is rough, resulting in blurry reflections and larger, less concentrated specular highlights.
+### RoughnessMap
+Determines the apparent roughness across the surface. A roughness map is a grayscale image where black pixels correspond to a maximally smooth surface, and white pixels correspond to a maximally rough surface.
 
-### Runtime Scriptability
-
-The above textures cannot be modified in game. This is because we need to perform somewhat expensive processing of all of these textures together in order to display them, and certain devices aren't powerful enough to perform this processing while running a game.
+Roughness refers to how much variation the surface has on a very small scale. Reflections on smooth surfaces are sharp and concentrated. Reflections on rough surfaces are more blurry and dispersed.
