@@ -10,9 +10,11 @@ SurfaceAppearance objects allow you to override the appearance of a MeshPart wit
 PBR is short for Physically Based Rendering, which refers to a common texture format for defining extra physical details in games. Because this format is widely used, it’s easy to take meshes and textures made in 3rd party editing software and import them into Roblox. It’s also easy to find PBR format content from various 3rd party stores such as [SketchFab](https://sketchfab.com/search?q=pbr+object&sort_by=-relevance&type=models), [TurboSquid](https://www.turbosquid.com/Search/3D-Models/free/pbr), [CGTrader](http://cgtrader.com/pbr-3d-models?polygons=lt_5k).
 
 Here is a mesh with PBR textures [found on Turbosquid](https://www.turbosquid.com/3d-models/3d-model-fantasy-sword---ready/1119210) imported into Roblox.
+
 ![Fantasy Sword](images/meshpart-vs-sa.png)
 
 SurfaceAppearance’s AlphaMode property can also be to improve the look of partially transparent textures on MeshParts by fixing various sorting issues.
+
 ![Fantasy Sword](images/pinetrees.png)
 
 How a MeshPart with a SurfaceAppearance looks to users depends on their device and their graphics quality level. You may want to preview your content with different quality level settings.
@@ -25,6 +27,7 @@ Note: Most SurfaceAppearance properties cannot be modified by scripts in-game. T
 Determines how the alpha channel of the ColorMap of a SurfaceAppearance is used.
 
 When SurfaceAppearance.AlphaMode is set to Transparency and the MeshPart.Transparency is set to 0, opaque pixels in the SurfaceAppearance’s ColorMap will render as completely opaque in the 3D scene. This solves various problems for textures with different transparent and opaque areas, such as foliage. When parts of the surface are fully opaque, the Roblox engine can render them with proper depth-based occlusion. Opaque surfaces also generally work better with depth-based effects like DepthOfField, glass and water refraction, and water reflection.
+
 MeshPart.TextureId vs SurfaceAppearance:
 
 ![Leaves Comparison](images/leaves-comparison.gif)
