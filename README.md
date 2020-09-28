@@ -1,6 +1,8 @@
-https://roblox.github.io/avatar-evolution/
+# Avatar Evolution is no longer maintained.
 
-**Avatar Evolution is no longer actively maintained.** Most of the features from this project will soon be available in standard Roblox Studio.
+Most of the features from this project will soon be available in standard Roblox Studio.
+
+https://roblox.github.io/avatar-evolution/
 
 - **v0.419.0.384317**: Base version update, bugfixes, broke SurfaceAppearance
 - **v0.417.0.379929**: Base production version update, many bug fixes
