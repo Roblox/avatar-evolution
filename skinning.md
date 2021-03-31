@@ -36,7 +36,7 @@ There are several general possibilities:
 
 2. **S1** &mdash; R15 animation compatible, 1 MeshPart.
 
-   Makes sure you have the standard 15 joints named as per R15, except 'HumanoidRootNode' should be named 'HumandoidRootPart'. Skin these to a single mesh.
+   Makes sure you have the standard 15 joints named as per R15, except 'HumanoidRootNode' should be named 'HumanoidRootPart'. Skin these to a single mesh.
 
    Use the 'Custom' import setting. This will create a Model that can be used to play current catalog R15 animations but on a single mesh.
 
@@ -46,7 +46,7 @@ There are several general possibilities:
 
    - The HumanoidRootPart and the imported MeshPart are welded together.
    - `Humanoid.AutomaticScalingEnabled` is disabled, and the hip height is manually entered to correctly put the character on the ground.
-   - `CanCollide` on the mesh part is turned off, and the part size of the HumandRootPart is adjusted to the desired collision box.
+   - `CanCollide` on the mesh part is turned off, and the part size of the HumanoidRootPart is adjusted to the desired collision box.
 
    **Warning**: the resultant character Model will not be fully compatible with existing scripts - for example scripts looking for specific Parts eg. Head will fail.
 
